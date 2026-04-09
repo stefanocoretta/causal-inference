@@ -9,22 +9,35 @@ knitr:
       bg: transparent
 ---
 
+##  {background-image="../img/courtney-cook-66IZaW9LIpI-unsplash.jpg"}
 
-## {background-image="../img/courtney-cook-66IZaW9LIpI-unsplash.jpg"}
+[**"Correlation is not causation"**]{style="font-size: 60px"}
 
-[**Correlation is NOT causation**]{style="font-size: 60px"}
+<br><br><br><br><br><br><br><br><br><br>
 
 [Photo by <a href="https://unsplash.com/@courtneymcook?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Courtney Cook</a> on <a href="https://unsplash.com/photos/four-round-white-and-brown-ornaments-66IZaW9LIpI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>]{style="font-size: 8px;"}
 
 ## Clothing and ice cream
 
-<br><br>
+<br><br><br><br>
 
 ::: {style="text-align: center; font-size: 50px;"}
 🎽 shorter clothing ↔️ more ice cream 🍨
-::::
+:::
 
-## Counfound
+## Counfound: temperature
+
+<br><br><br>
+
+::: {style="text-align: center; font-size: 50px;"}
+🌡️ higher temperature ➡️ shorter clothing 🎽
+
+<br>
+
+🌡️ higher temperature ➡️ more ice cream 🍨
+:::
+
+## Causal effects
 
 ```{r}
 #| label: setup
@@ -32,21 +45,25 @@ knitr:
 
 library(tidyverse)
 library(ggdag)
+library(dagitty)
 ```
 
 ```{r}
+#| label: dag-temp
+
 temp <- dagify(
-  Clothing ~ Temperature,
-  Icecream ~ Temperature,
+  C ~ T,
+  I ~ T,
   coords = list(
-    x = c(Clothing = 1, Icecream = 2, Temperature = 1.5),
-    y = c(Clothing = 1, Icecream = 1, Temperature = 2)
+    x = c(C = 1, I = 2, T = 1.5),
+    y = c(C = 1, I = 1, T = 2)
   )
 )
 
 ggplot(temp, aes(x = x, y = y, xend = xend, yend = yend)) +
   geom_dag_edges() +
-  geom_dag_label() +
+  geom_dag_point() +
+  geom_dag_text() +
   theme_dag(
     base_size = 20,
     panel.background = element_rect(fill = "transparent", colour = NA),
@@ -54,3 +71,42 @@ ggplot(temp, aes(x = x, y = y, xend = xend, yend = yend)) +
   )
 ```
 
+## Directed acyclic graphs (DAGs)
+
+::: {.callout-note appearance="simple"}
+-   **Graphical causal theory**.
+
+-   **Nodes** represent variables.
+
+-   **Edges** (arrows) represent causal effects (*directed*).
+
+-   Causality flows "linearly", no circular causality (*acylic*).
+:::
+
+## Sentence length and subordination frequency
+
+```{r}
+#| label: dag-pandermaat
+
+temp <- dagify(
+  L ~ C,
+  S ~ C,
+  coords = list(
+    x = c(L = 1, S = 2, C = 1.5),
+    y = c(L = 1, S = 1, C = 2)
+  ),
+  exposure = "L",
+  outcome = "S"
+)
+
+ggplot(temp, aes(x = x, y = y, xend = xend, yend = yend)) +
+  geom_dag_edges() +
+  geom_dag_point() +
+  geom_dag_text() +
+  theme_dag(
+    base_size = 20,
+    panel.background = element_rect(fill = "transparent", colour = NA),
+    plot.background  = element_rect(fill = "transparent", colour = NA)
+  )
+
+```
