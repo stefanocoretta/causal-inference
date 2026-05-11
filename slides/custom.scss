@@ -54,7 +54,7 @@ $font-family-monospace: 'Source Code Pro', monospace !default;
 $presentation-font-size-root: 30px !default;
 
 // Headings
-$presentation-h2-font-size: 2em !default;
+$presentation-h2-font-size: 1.5em !default;
 
 // Layout
 $presentation-block-margin: 40px;
@@ -84,4 +84,28 @@ $presentation-title-slide-text-align: left;
 .reveal .bluesky-embed {
   max-height: 500px;
   overflow: auto;
+}
+
+.reveal img, .reveal video, .reveal iframe {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.caption {
+  margin-top: 25px !important;
+}
+
+.shadow-text {
+  text-shadow: 0px 0px 10px rgba(0,0,0,0.8);
+}
+
+.text-box {
+  background-color: var(--inverse);
+  color: var(--lighter-color);
+  padding: 10px;
+}
+
+.small-ref {
+  font-size: 0.5em;
+  color: gray;
 }
