@@ -225,8 +225,48 @@ tibble(x, y) |>
 
 :::
 
-## Confound: example
+## Confound: greater proficiency and code-switching
 
+```{r}
+#| label: pro-switch
 
+pro_switch <- dagify(
+  S ~ P,
+  coords = tibble(
+    name = c("P", "S"),
+    x = c(1, 2),
+    y = c(1, 1)
+  )
+)
+
+gg_dag(pro_switch)
+```
+
+::: aside
+P = proficiency, S = code-switching. [@schachingertenes2023]{.small-ref}
+:::
+
+## Confound: multicultural context
+
+```{r}
+#| label: pro-switch-confound
+
+pro_switch <- dagify(
+  P ~ C,
+  S ~ C,
+  coords = tibble(
+    name = c("P", "S", "C"),
+    x = c(1, 3, 2),
+    y = c(1, 1, 2)
+  )
+)
+
+gg_dag(pro_switch)
+
+```
+
+::: aside
+C = multicultural context, P = proficiency, S = code-switching. [@schachingertenes2023]{.small-ref}
+:::
 
 ## References

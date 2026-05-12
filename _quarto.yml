@@ -6,6 +6,9 @@ project:
 website:
   title: "Causal Inference"
   navbar:
+    tools:
+      - icon: github
+        href: "https://github.com/stefanocoretta/causal-inference"
     left:
       - href: index.qmd
         text: Home
@@ -13,7 +16,7 @@ website:
 format:
   html:
     theme:
-      - cosmo
+      - brite.scss
       - brand
     css: styles.css
     toc: true
