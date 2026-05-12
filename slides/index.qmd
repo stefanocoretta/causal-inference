@@ -46,6 +46,7 @@ bibliography: references.bib
 #| include: false
 
 library(tidyverse)
+theme_set(theme_light())
 library(ggdag)
 library(dagitty)
 library(patchwork)
@@ -127,7 +128,7 @@ gg_dag(temp)
 C = discourse complexity, L = sentence length, S = subordination frequency. [@pandermaat2017]{.small-ref}
 :::
 
-## Four elemental confounds
+## Four path types
 
 ```{r}
 #| label: elemental
@@ -177,5 +178,55 @@ p2
 p3
 p4
 ```
+
+## The Fork: Z is a confound
+
+```{r}
+#| label: elemental-fork
+
+gg_dag(d1)
+```
+
+## Confound: simulate
+
+::: .columns
+
+::: {.column width="40%"}
+
+```{r}
+#| label: confound-sim
+#| echo: true
+
+n <- 100
+
+z <- rnorm(100)
+
+x <- 0.4 * z + rnorm(100, 0, 0.1)
+y <- 0.7 * z + rnorm(100, 0, 0.1)
+```
+
+:::
+
+::: {.column width="60%" .fragment}
+
+```{r}
+#| label: confound-plot
+#| fig-asp: 1
+#| fig-align: center
+
+tibble(x, y) |> 
+  ggplot(aes(x, y)) +
+  geom_point() +
+  theme(text = element_text(size = 20))
+```
+
+
+:::
+
+:::
+
+## Confound: example
+
+
 
 ## References

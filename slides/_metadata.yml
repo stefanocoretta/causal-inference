@@ -2,6 +2,7 @@ format:
   revealjs:
     slide-number: true
     history: false
+    fig-align: center
     theme: [default, custom.scss]
     title-slide-attributes:
       data-background: |
