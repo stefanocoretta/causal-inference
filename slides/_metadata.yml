@@ -9,3 +9,9 @@ format:
         ```{=html}
         var(--inverse)
         ```
+knitr:
+  opts_chunk:
+    dev: png
+    dev.args:
+      bg: transparent
+    fig.align: center
