@@ -1,6 +1,9 @@
 ---
-title: "Causal Inference for linguistics"
+title: "Causal Inference"
+subtitle: "Correlation *is* causation"
 author: "Stefano Coretta"
+date: 20/05/2026
+institute: University of Edinburgh
 format: revealjs
 bibliography: references.bib
 ---
@@ -8,7 +11,6 @@ bibliography: references.bib
 ##  {background-image="../img/courtney-cook-66IZaW9LIpI-unsplash.jpg"}
 
 [**"Correlation is not causation"**]{style="font-size: 60px"}
-
 
 ::: aside
 [Photo by <a href="https://unsplash.com/@courtneymcook?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Courtney Cook</a> on <a href="https://unsplash.com/photos/four-round-white-and-brown-ornaments-66IZaW9LIpI?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>]{style="font-size: 8px;"}
@@ -22,7 +24,7 @@ bibliography: references.bib
 🎽 shorter clothing ↔️ more ice cream 🍨
 :::
 
-## Counfound: temperature
+## Confound: temperature
 
 <br><br><br>
 
@@ -48,13 +50,12 @@ library(dagitty)
 library(patchwork)
 library(GGally)
 
-gg_dag <- function(dag, base_size = 20) {
+gg_dag <- function(dag) {
   ggplot(dag, aes(x = x, y = y, xend = xend, yend = yend)) +
   geom_dag_edges() +
   geom_dag_point() +
   geom_dag_text() +
   theme_dag(
-    base_size = base_size,
     panel.background = element_rect(fill = "transparent", colour = NA),
     plot.background  = element_rect(fill = "transparent", colour = NA)
   )
@@ -80,13 +81,13 @@ gg_dag(temp)
 ## Directed acyclic graphs (DAGs)
 
 ::: {.callout-note appearance="simple"}
--   **Graphical causal theory**.
+- **Graphical causal theory**.
 
--   **Nodes** represent variables.
+- **Nodes** represent variables.
 
--   **Edges** (arrows) represent causal effects (*directed*).
+- **Edges** (arrows) represent causal effects (*directed*).
 
--   Causality flows "linearly", no circular causality (*acylic*).
+- Causality flows "linearly", no circular causality (*acylic*).
 :::
 
 ```{r}
@@ -98,7 +99,6 @@ gg_dag(temp)
 ## Sentence length and subordination frequency
 
 ::: fragment
-
 ```{r}
 #| label: dag-pandermaat
 
@@ -116,11 +116,11 @@ temp <- dagify(
 gg_dag(temp)
 
 ```
-
 :::
 
 ::: aside
-C = discourse complexity, L = sentence length, S = subordination frequency. @pandermaat2017
+C = discourse complexity, L = sentence length, S = subordination frequency.
+@pandermaat2017
 :::
 
 ## Four path types
@@ -184,10 +184,8 @@ gg_dag(d1)
 
 ## Confound: simulate
 
-::: .columns
-
+::::: columns
 ::: {.column width="40%"}
-
 ```{r}
 #| label: confound-sim
 #| echo: true
@@ -201,11 +199,9 @@ z <- rnorm(100)
 x <- 0.4 * z + rnorm(100, 0, 0.1)
 y <- 0.7 * z + rnorm(100, 0, 0.1)
 ```
-
 :::
 
-::: {.column width="60%" .fragment}
-
+::: {.column .fragment width="60%"}
 ```{r}
 #| label: confound-plot
 #| fig-asp: 1
@@ -217,13 +213,8 @@ conf |>
   geom_point() +
   theme(text = element_text(size = 20))
 ```
-
-
 :::
-
-:::
-
-
+:::::
 
 ## Confound: greater proficiency and code-switching
 
@@ -246,7 +237,8 @@ gg_dag(pro_switch) +
 ```
 
 ::: aside
-P = proficiency, S = code-switching. @schachingertenes2023
+P = proficiency, S = code-switching.
+@schachingertenes2023
 :::
 
 ## Confound: multicultural context
@@ -271,7 +263,8 @@ gg_dag(pro_switch)
 ```
 
 ::: aside
-C = multicultural context, P = proficiency, S = code-switching. @schachingertenes2023
+C = multicultural context, P = proficiency, S = code-switching.
+@schachingertenes2023
 :::
 
 ## The Pipe: Z is a moderator
@@ -284,10 +277,8 @@ gg_dag(d2)
 
 ## Moderator: simulate
 
-::: .columns
-
+::::: columns
 ::: {.column width="40%"}
-
 ```{r}
 #| label: moderator-sim
 #| echo: true
@@ -301,11 +292,9 @@ x <- rnorm(100)
 z <- 0.4 * x + rnorm(100, 0, 0.1)
 y <- 0.7 * z + rnorm(100, 0, 0.1)
 ```
-
 :::
 
-::: {.column width="60%" .fragment}
-
+::: {.column .fragment width="60%"}
 ```{r}
 #| label: moderator-plot
 #| fig-asp: 1
@@ -317,11 +306,8 @@ mod |>
   geom_point() +
   theme(text = element_text(size = 20))
 ```
-
-
 :::
-
-:::
+:::::
 
 ## Moderator: bilingualism and executive function
 
@@ -343,7 +329,8 @@ gg_dag(bi_exec)
 ```
 
 ::: aside
-B = bilingualism, E = executive function. @paap2014
+B = bilingualism, E = executive function.
+@paap2014
 :::
 
 ## Moderator: code-switching
@@ -366,7 +353,8 @@ gg_dag(bi_exec_mod)
 ```
 
 ::: aside
-B = bilingualism, S = code-switching, E = executive function. @paap2014
+B = bilingualism, S = code-switching, E = executive function.
+@paap2014
 :::
 
 ## Confound vs moderator
@@ -415,9 +403,9 @@ new_trust <- dagify(
 gg_dag(new_trust)
 ```
 
-
 ::: aside
-N = newsworthiness, T = trustworthiness, S = selected for funding. @mcelreath2020
+N = newsworthiness, T = trustworthiness, S = selected for funding.
+@mcelreath2020
 :::
 
 ## Collider: simulate
@@ -435,7 +423,7 @@ n <- 200  # Number of grant proposals
 p <- 0.1  # Proportion to select
 
 # Uncorrelated newsworthiness and trustworthiness
-d <- tibble(
+coll <- tibble(
   newsworthiness = rnorm(n, mean = 0, sd = 1),
   trustworthiness = rnorm(n, mean = 0, sd = 1)
 ) |> 
@@ -448,7 +436,7 @@ d <- tibble(
 ## Collider: simulate (plot)
 
 ```{r}
-#| label: coolider-plot
+#| label: collider-plot
 #| message: false
 #| fig-asp: 1
 
@@ -461,17 +449,17 @@ text <- tibble(
   selected        = c(TRUE, FALSE),
   label           = c("selected", "rejected"))
 
-d |> 
+coll |> 
   ggplot(aes(x = newsworthiness, y = trustworthiness, color = selected)) +
   geom_point(aes(shape = selected), alpha = 3/4, size = 3) +
   geom_label(data = text, aes(label = label), size = 20 / .pt) +
-  geom_smooth(data = d |> filter(selected == TRUE),
+  geom_smooth(data = coll |> filter(selected == TRUE),
               method = "lm", fullrange = T, se = F,
               color = "darkblue", linewidth = 1/2) +
   scale_x_continuous(limits = c(-3, 3.9), expand = c(0, 0)) +
   scale_color_manual(values = c("black", "darkblue")) +
   scale_shape_manual(values = c(1, 19)) +
-  coord_cartesian(ylim = range(d$trustworthiness)) +
+  coord_cartesian(ylim = range(coll$trustworthiness)) +
   theme(legend.position = "none", text = element_text(size = 20))
 ```
 
@@ -496,7 +484,8 @@ gg_dag(freq_irr) +
 ```
 
 ::: aside
-F = frequency, I = irregularity. @wu2019
+F = frequency, I = irregularity.
+@wu2019
 :::
 
 ## Collider: verb saliency
@@ -519,13 +508,41 @@ gg_dag(bi_exec_mod)
 ```
 
 ::: aside
-F = frequency, S = saliency, I = irregularity. @wu2019
+F = frequency, S = saliency, I = irregularity.
+@wu2019
 :::
 
-## Confound: regression
+##  {background-image="../img/patrick-robert-doyle-EkBCBo7vmM4-unsplash.jpg"}
 
-::: columns
-::: {.column}
+[Regression for causation]{.absolute .r-fit-text top="450" left="0" style="color: white;"}
+
+::: aside
+[Photo by [Patrick Robert Doyle](https://unsplash.com/@teapowered?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/white-and-black-mountain-EkBCBo7vmM4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)]{style="font-size: 8px;"}
+:::
+
+## Regression: confound {.nostretch}
+
+```{r}
+#| label: confound-dag
+#| fig-asp: 0.25
+#| out-width: 40%
+
+ggplot(d1, aes(x = x, y = y, xend = xend, yend = yend)) +
+  geom_dag_edges(
+    end_cap = ggraph::circle(15, "mm"),
+    start_cap = ggraph::circle(15, "mm")
+  ) +
+  geom_dag_point(size = 20) +
+  geom_dag_text(size = 20 / .pt) +
+  expand_plot(expand_y = c(0.3, 0.3)) +
+  theme_dag(
+    panel.background = element_rect(fill = "transparent", colour = NA),
+    plot.background  = element_rect(fill = "transparent", colour = NA)
+  )
+```
+
+::::::: {.columns .fragment}
+:::: column
 ```{r}
 #| label: conf-lm-1
 #| echo: true
@@ -533,17 +550,16 @@ F = frequency, S = saliency, I = irregularity. @wu2019
 conf_lm_1 <- lm(y ~ x, data = conf)
 ```
 
-::: fragment
+::: {.fragment style="font-size: 30pt;"}
 <br>
 
 ```{r}
 coef(summary(conf_lm_1))[, 1:2] |> round(3)
 ```
 :::
+::::
 
-:::
-
-::: {.column .fragment}
+:::: {.column .fragment}
 ```{r}
 #| label: conf-lm-2
 #| echo: true
@@ -551,21 +567,40 @@ coef(summary(conf_lm_1))[, 1:2] |> round(3)
 conf_lm_2 <- lm(y ~ x + z, data = conf)
 ```
 
-::: fragment
+::: {.fragment style="font-size: 30pt;"}
 <br>
 
 ```{r}
 coef(summary(conf_lm_2))[, 1:2] |> round(3)
 ```
 :::
+::::
+:::::::
 
-:::
-:::
+## Regression: moderator {.nostretch}
 
-## Moderator: regression
+```{r}
+#| label: moderator-dag
+#| fig-asp: 0.25
+#| out-width: 40%
 
-::: columns
-::: {.column}
+ggplot(d2, aes(x = x, y = y, xend = xend, yend = yend)) +
+  geom_dag_edges(
+    end_cap = ggraph::circle(15, "mm"),
+    start_cap = ggraph::circle(15, "mm")
+  ) +
+  geom_dag_point(size = 20) +
+  geom_dag_text(size = 20 / .pt) +
+  expand_plot(expand_y = c(0.3, 0.3)) +
+  theme_dag(
+    panel.background = element_rect(fill = "transparent", colour = NA),
+    plot.background  = element_rect(fill = "transparent", colour = NA)
+  )
+```
+
+
+::::::: {.columns .fragment}
+:::: column
 ```{r}
 #| label: mod-lm-1
 #| echo: true
@@ -573,17 +608,16 @@ coef(summary(conf_lm_2))[, 1:2] |> round(3)
 mod_lm_1 <- lm(y ~ x, data = mod)
 ```
 
-::: fragment
+::: {.fragment style="font-size: 30pt;"}
 <br>
 
 ```{r}
 coef(summary(mod_lm_1))[, 1:2] |> round(3)
 ```
 :::
+::::
 
-:::
-
-::: {.column .fragment}
+:::: {.column .fragment}
 ```{r}
 #| label: mod-lm-2
 #| echo: true
@@ -591,18 +625,77 @@ coef(summary(mod_lm_1))[, 1:2] |> round(3)
 mod_lm_2 <- lm(y ~ x + z, data = mod)
 ```
 
-::: fragment
+::: {.fragment style="font-size: 30pt;"}
 <br>
 
 ```{r}
 coef(summary(mod_lm_2))[, 1:2] |> round(3)
 ```
 :::
+::::
+:::::::
 
+## Regression: collider {.nostretch}
+
+```{r}
+#| label: collider-dag
+#| fig-asp: 0.25
+#| out-width: 40%
+
+ggplot(d3, aes(x = x, y = y, xend = xend, yend = yend)) +
+  geom_dag_edges(
+    end_cap = ggraph::circle(15, "mm"),
+    start_cap = ggraph::circle(15, "mm")
+  ) +
+  geom_dag_point(size = 20) +
+  geom_dag_text(size = 20 / .pt) +
+  expand_plot(expand_y = c(0.3, 0.3)) +
+  theme_dag(
+    panel.background = element_rect(fill = "transparent", colour = NA),
+    plot.background  = element_rect(fill = "transparent", colour = NA)
+  )
+```
+
+::::::: {.columns .fragment}
+:::: column
+```{r}
+#| label: coll-lm-1
+#| echo: true
+
+coll_lm_1 <- lm(
+  trustworthiness ~ newsworthiness,
+  data = coll
+)
+```
+
+::: {.fragment style="font-size: 30pt;"}
+<br>
+
+```{r}
+coef(summary(coll_lm_1))[, 1:2] |> round(3)
+```
 :::
+::::
+
+:::: {.column .fragment}
+```{r}
+#| label: coll-lm-2
+#| echo: true
+
+coll_lm_2 <- lm(
+  trustworthiness ~ newsworthiness + selected,
+  data = coll
+)
+```
+
+::: {.fragment style="font-size: 30pt;"}
+<br>
+
+```{r}
+coef(summary(coll_lm_2))[, 1:2] |> round(3)
+```
 :::
-
-
-
+::::
+:::::::
 
 ## References

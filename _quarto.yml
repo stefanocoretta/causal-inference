@@ -12,6 +12,8 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - href: slides/index.qmd
+        text: Slides
 
 format:
   html:
@@ -23,3 +25,11 @@ format:
 
 callout-icon: false
 
+editor: 
+  markdown: 
+    canonical: true
+    wrap: sentence
+
+execute:
+  cache: true
+  freeze: auto
