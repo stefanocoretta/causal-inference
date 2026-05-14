@@ -120,7 +120,7 @@ gg_dag(temp)
 :::
 
 ::: aside
-C = discourse complexity, L = sentence length, S = subordination frequency. [@pandermaat2017]{.small-ref}
+C = discourse complexity, L = sentence length, S = subordination frequency. @pandermaat2017
 :::
 
 ## Four path types
@@ -229,6 +229,8 @@ conf |>
 
 ```{r}
 #| label: pro-switch
+#| fig-asp: 1
+#| fig-width: 5
 
 pro_switch <- dagify(
   S ~ P,
@@ -239,17 +241,20 @@ pro_switch <- dagify(
   )
 )
 
-gg_dag(pro_switch)
+gg_dag(pro_switch) +
+  geom_point(aes(x = 1.5, y = 2), colour = "transparent")
 ```
 
 ::: aside
-P = proficiency, S = code-switching. [@schachingertenes2023]{.small-ref}
+P = proficiency, S = code-switching. @schachingertenes2023
 :::
 
 ## Confound: multicultural context
 
 ```{r}
 #| label: pro-switch-confound
+#| fig-asp: 1
+#| fig-width: 5
 
 pro_switch <- dagify(
   P ~ C,
@@ -266,7 +271,7 @@ gg_dag(pro_switch)
 ```
 
 ::: aside
-C = multicultural context, P = proficiency, S = code-switching. [@schachingertenes2023]{.small-ref}
+C = multicultural context, P = proficiency, S = code-switching. @schachingertenes2023
 :::
 
 ## The Pipe: Z is a moderator
@@ -338,7 +343,7 @@ gg_dag(bi_exec)
 ```
 
 ::: aside
-B = bilingualism, E = executive function. [@paap2014]{.small-ref}
+B = bilingualism, E = executive function. @paap2014
 :::
 
 ## Moderator: code-switching
@@ -361,7 +366,7 @@ gg_dag(bi_exec_mod)
 ```
 
 ::: aside
-B = bilingualism, S = code-switching, E = executive function. [@paap2014]{.small-ref}
+B = bilingualism, S = code-switching, E = executive function. @paap2014
 :::
 
 ## Confound vs moderator
@@ -412,7 +417,7 @@ gg_dag(new_trust)
 
 
 ::: aside
-N = newsworthiness, T = trustworthiness, S = selected for funding. [@mcelreath2020]{.small-ref}
+N = newsworthiness, T = trustworthiness, S = selected for funding. @mcelreath2020
 :::
 
 ## Collider: simulate
@@ -470,6 +475,52 @@ d |>
   theme(legend.position = "none", text = element_text(size = 20))
 ```
 
+## Collider: verb frequency and irregularity
+
+```{r}
+#| label: freq-irr
+#| fig-asp: 1
+#| fig-width: 5
+
+freq_irr <- dagify(
+  I ~ `F`,
+  coords = tibble(
+    name = c("F", "I"),
+    x = c(1, 2),
+    y = c(1, 1)
+  )
+)
+
+gg_dag(freq_irr) +
+  geom_point(aes(x = 1.5, y = -1), color = "transparent")
+```
+
+::: aside
+F = frequency, I = irregularity. @wu2019
+:::
+
+## Collider: verb saliency
+
+```{r}
+#| label: freq-irr-coll
+#| fig-asp: 1
+#| fig-width: 5
+
+bi_exec_mod <- dagify(
+  S ~ `F`, S ~ I,
+  coords = tibble(
+    name = c("F", "I", "S"),
+    x = c(1, 3, 2),
+    y = c(2, 2, 1)
+  )
+)
+
+gg_dag(bi_exec_mod)
+```
+
+::: aside
+F = frequency, S = saliency, I = irregularity. @wu2019
+:::
 
 ## Confound: regression
 
