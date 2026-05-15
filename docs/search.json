@@ -1,0 +1,296 @@
+[
+  {
+    "objectID": "slides/index.html#section",
+    "href": "slides/index.html#section",
+    "title": "Causal Inference for linguistics",
+    "section": "",
+    "text": "“Correlation is not causation”\n\n\nPhoto by Courtney Cook on Unsplash"
+  },
+  {
+    "objectID": "slides/index.html#clothing-and-ice-cream",
+    "href": "slides/index.html#clothing-and-ice-cream",
+    "title": "Causal Inference for linguistics",
+    "section": "Clothing and ice cream",
+    "text": "Clothing and ice cream\n\n\n🎽 shorter clothing ↔︎️ more ice cream 🍨"
+  },
+  {
+    "objectID": "slides/index.html#confound-temperature",
+    "href": "slides/index.html#confound-temperature",
+    "title": "Causal Inference for linguistics",
+    "section": "Confound: temperature",
+    "text": "Confound: temperature\n\n\n🌡️ higher temperature ➡️ shorter clothing 🎽\n\n🌡️ higher temperature ➡️ more ice cream 🍨"
+  },
+  {
+    "objectID": "slides/index.html#causal-effects",
+    "href": "slides/index.html#causal-effects",
+    "title": "Causal Inference for linguistics",
+    "section": "Causal effects",
+    "text": "Causal effects"
+  },
+  {
+    "objectID": "slides/index.html#directed-acyclic-graphs-dags",
+    "href": "slides/index.html#directed-acyclic-graphs-dags",
+    "title": "Causal Inference for linguistics",
+    "section": "Directed acyclic graphs (DAGs)",
+    "text": "Directed acyclic graphs (DAGs)\n\n\n\n\nGraphical causal theory.\nNodes represent variables.\nEdges (arrows) represent causal effects (directed).\nCausality flows “linearly”, no circular causality (acylic)."
+  },
+  {
+    "objectID": "slides/index.html#sentence-length-and-subordination-frequency",
+    "href": "slides/index.html#sentence-length-and-subordination-frequency",
+    "title": "Causal Inference for linguistics",
+    "section": "Sentence length and subordination frequency",
+    "text": "Sentence length and subordination frequency\n\n\n\n\n\n\n\n\n\n\n\n\n\nC = discourse complexity, L = sentence length, S = subordination frequency. Pander Maat (2017)"
+  },
+  {
+    "objectID": "slides/index.html#four-path-types",
+    "href": "slides/index.html#four-path-types",
+    "title": "Causal Inference for linguistics",
+    "section": "Four path types",
+    "text": "Four path types"
+  },
+  {
+    "objectID": "slides/index.html#the-fork-z-is-a-confound",
+    "href": "slides/index.html#the-fork-z-is-a-confound",
+    "title": "Causal Inference for linguistics",
+    "section": "The Fork: Z is a confound",
+    "text": "The Fork: Z is a confound"
+  },
+  {
+    "objectID": "slides/index.html#confound-simulate",
+    "href": "slides/index.html#confound-simulate",
+    "title": "Causal Inference for linguistics",
+    "section": "Confound: simulate",
+    "text": "Confound: simulate\n\n\n\nset.seed(9988)\n\nn &lt;- 100\n\nz &lt;- rnorm(100)\n\nx &lt;- 0.4 * z + rnorm(100, 0, 0.1)\ny &lt;- 0.7 * z + rnorm(100, 0, 0.1)"
+  },
+  {
+    "objectID": "slides/index.html#confound-greater-proficiency-and-code-switching",
+    "href": "slides/index.html#confound-greater-proficiency-and-code-switching",
+    "title": "Causal Inference for linguistics",
+    "section": "Confound: greater proficiency and code-switching",
+    "text": "Confound: greater proficiency and code-switching\n\n\n\n\n\n\n\n\n\n\n\nP = proficiency, S = code-switching. Schächinger Tenés et al. (2023)"
+  },
+  {
+    "objectID": "slides/index.html#confound-multicultural-context",
+    "href": "slides/index.html#confound-multicultural-context",
+    "title": "Causal Inference for linguistics",
+    "section": "Confound: multicultural context",
+    "text": "Confound: multicultural context\n\n\n\n\n\n\n\n\n\n\n\nC = multicultural context, P = proficiency, S = code-switching. Schächinger Tenés et al. (2023)"
+  },
+  {
+    "objectID": "slides/index.html#the-pipe-z-is-a-mediator",
+    "href": "slides/index.html#the-pipe-z-is-a-mediator",
+    "title": "Causal Inference for linguistics",
+    "section": "The Pipe: Z is a mediator",
+    "text": "The Pipe: Z is a mediator"
+  },
+  {
+    "objectID": "slides/index.html#mediator-simulate",
+    "href": "slides/index.html#mediator-simulate",
+    "title": "Causal Inference for linguistics",
+    "section": "Mediator: simulate",
+    "text": "Mediator: simulate\n\n\n\nset.seed(9988)\n\nn &lt;- 100\n\nx &lt;- rnorm(100)\n\nz &lt;- 0.4 * x + rnorm(100, 0, 0.1)\ny &lt;- 0.7 * z + rnorm(100, 0, 0.1)"
+  },
+  {
+    "objectID": "slides/index.html#mediator-bilingualism-and-executive-function",
+    "href": "slides/index.html#mediator-bilingualism-and-executive-function",
+    "title": "Causal Inference for linguistics",
+    "section": "Mediator: bilingualism and executive function",
+    "text": "Mediator: bilingualism and executive function\n\n\n\n\n\n\n\n\n\n\n\nB = bilingualism, E = executive function. Paap (2014)"
+  },
+  {
+    "objectID": "slides/index.html#mediator-code-switching",
+    "href": "slides/index.html#mediator-code-switching",
+    "title": "Causal Inference for linguistics",
+    "section": "Mediator: code-switching",
+    "text": "Mediator: code-switching\n\n\n\n\n\n\n\n\n\n\n\nB = bilingualism, S = code-switching, E = executive function. Paap (2014)"
+  },
+  {
+    "objectID": "slides/index.html#confound-vs-mediator",
+    "href": "slides/index.html#confound-vs-mediator",
+    "title": "Causal Inference for linguistics",
+    "section": "Confound vs Mediator",
+    "text": "Confound vs Mediator"
+  },
+  {
+    "objectID": "slides/index.html#the-collider-z-is-collider",
+    "href": "slides/index.html#the-collider-z-is-collider",
+    "title": "Causal Inference for linguistics",
+    "section": "The Collider: Z is collider",
+    "text": "The Collider: Z is collider"
+  },
+  {
+    "objectID": "slides/index.html#collider-newsworthiness-and-trustworthiness",
+    "href": "slides/index.html#collider-newsworthiness-and-trustworthiness",
+    "title": "Causal Inference for linguistics",
+    "section": "Collider: newsworthiness and trustworthiness",
+    "text": "Collider: newsworthiness and trustworthiness\n\n\n\n\n\n\n\n\n\n\n\nN = newsworthiness, T = trustworthiness, S = selected for funding. McElreath (2020)"
+  },
+  {
+    "objectID": "slides/index.html#collider-simulate",
+    "href": "slides/index.html#collider-simulate",
+    "title": "Causal Inference for linguistics",
+    "section": "Collider: simulate",
+    "text": "Collider: simulate\n\n# Adapted from https://solomon.quarto.pub/sr2/06.html#overthinking-simulated-science-distortion.\n# Example from McElreath *Statistical Rethinking* (2nd ed).\n\nset.seed(1914)\n\nn &lt;- 200  # Number of grant proposals\np &lt;- 0.1  # Proportion to select\n\n# Uncorrelated newsworthiness and trustworthiness\ncoll &lt;- tibble(\n  newsworthiness = rnorm(n, mean = 0, sd = 1),\n  trustworthiness = rnorm(n, mean = 0, sd = 1)\n) |&gt; \n  # total_score\n  mutate(total_score = newsworthiness + trustworthiness) |&gt; \n  # Select top 10% of combined scores\n  mutate(selected = ifelse(total_score &gt;= quantile(total_score, 1 - p), TRUE, FALSE))"
+  },
+  {
+    "objectID": "slides/index.html#collider-simulate-plot",
+    "href": "slides/index.html#collider-simulate-plot",
+    "title": "Causal Inference for linguistics",
+    "section": "Collider: simulate (plot)",
+    "text": "Collider: simulate (plot)"
+  },
+  {
+    "objectID": "slides/index.html#collider-verb-frequency-and-irregularity",
+    "href": "slides/index.html#collider-verb-frequency-and-irregularity",
+    "title": "Causal Inference for linguistics",
+    "section": "Collider: verb frequency and irregularity",
+    "text": "Collider: verb frequency and irregularity\n\n\n\n\n\n\n\n\n\n\n\nF = frequency, I = irregularity. Wu et al. (2019)"
+  },
+  {
+    "objectID": "slides/index.html#collider-verb-saliency",
+    "href": "slides/index.html#collider-verb-saliency",
+    "title": "Causal Inference for linguistics",
+    "section": "Collider: verb saliency",
+    "text": "Collider: verb saliency\n\n\n\n\n\n\n\n\n\n\n\nF = frequency, S = saliency, I = irregularity. Wu et al. (2019)"
+  },
+  {
+    "objectID": "slides/index.html#section-1",
+    "href": "slides/index.html#section-1",
+    "title": "Causal Inference for linguistics",
+    "section": "",
+    "text": "Regression for causation\n\n\nPhoto by Patrick Robert Doyle on Unsplash"
+  },
+  {
+    "objectID": "slides/index.html#colonial-history-confound",
+    "href": "slides/index.html#colonial-history-confound",
+    "title": "Causal Inference for linguistics",
+    "section": "Colonial history (confound)",
+    "text": "Colonial history (confound)\n\n\n\n\n\n\n\n\n\n\n\nC = colonial history, E = economic development, L = language endangerment."
+  },
+  {
+    "objectID": "slides/index.html#colonial-history-simulate",
+    "href": "slides/index.html#colonial-history-simulate",
+    "title": "Causal Inference for linguistics",
+    "section": "Colonial history: simulate",
+    "text": "Colonial history: simulate\n\n\n\n\n\n\n\n\n\n\nset.seed(9988)\n\nn &lt;- 100\n\nC &lt;- rnorm(100)\n\nE &lt;- 0.4 * C + rnorm(100, 0, 0.1)\nL &lt;- 0.7 * C + rnorm(100, 0, 0.1)\n\ncol_df &lt;- tibble(C, E, L)\n\n\n\nC = colonial history, E = economic development, L = language endangerment."
+  },
+  {
+    "objectID": "slides/index.html#colonial-history-regression",
+    "href": "slides/index.html#colonial-history-regression",
+    "title": "Causal Inference for linguistics",
+    "section": "Colonial history: regression",
+    "text": "Colonial history: regression\n\n\n\n\n\n\n\n\n\n\n\n\nconf_lm_1 &lt;- lm(L ~ E, data = col_df)\n\n\n\n\n\n            Estimate Std. Error\n(Intercept)    0.004      0.021\nE              1.599      0.047\n\n\n\n\n\nconf_lm_2 &lt;- lm(L ~ E + C, data = col_df)\n\n\n\n\n\n            Estimate Std. Error\n(Intercept)    0.008      0.011\nE              0.019      0.098\nC              0.690      0.042\n\n\n\n\n\n\nC = colonial history, E = economic development, L = language endangerment."
+  },
+  {
+    "objectID": "slides/index.html#plant-reliance-mediator",
+    "href": "slides/index.html#plant-reliance-mediator",
+    "title": "Causal Inference for linguistics",
+    "section": "Plant reliance (mediator)",
+    "text": "Plant reliance (mediator)\n\n\n\n\n\n\n\n\n\n\n\nB = biodiversity, R = reliance on plants, P = number of plant names."
+  },
+  {
+    "objectID": "slides/index.html#plant-reliance-simulate",
+    "href": "slides/index.html#plant-reliance-simulate",
+    "title": "Causal Inference for linguistics",
+    "section": "Plant reliance: simulate",
+    "text": "Plant reliance: simulate\n\n\n\n\n\n\n\n\n\n\nset.seed(9988)\n\nn &lt;- 100\n\nB &lt;- rnorm(100)\n\nR &lt;- 0.4 * B + rnorm(100, 0, 0.1)\nP &lt;- 0.7 * R + rnorm(100, 0, 0.1)\n\npla_df &lt;- tibble(B, R, P)"
+  },
+  {
+    "objectID": "slides/index.html#plant-reliance-regression",
+    "href": "slides/index.html#plant-reliance-regression",
+    "title": "Causal Inference for linguistics",
+    "section": "Plant reliance: regression",
+    "text": "Plant reliance: regression\n\n\n\n\n\n\n\n\n\n\n\n\nmed_lm_1 &lt;- lm(P ~ B, data = pla_df)\n\n\n\n\n\n            Estimate Std. Error\n(Intercept)    0.012      0.013\nB              0.286      0.013\n\n\n\n\n\nmed_lm_2 &lt;- lm(P ~ B + R, data = pla_df)\n\n\n\n\n\n            Estimate Std. Error\n(Intercept)    0.008      0.011\nB             -0.010      0.042\nR              0.719      0.098"
+  },
+  {
+    "objectID": "slides/index.html#number-of-learners-collider",
+    "href": "slides/index.html#number-of-learners-collider",
+    "title": "Causal Inference for linguistics",
+    "section": "Number of learners (collider)",
+    "text": "Number of learners (collider)\n\n\n\n\n\n\n\n\n\n\n\nP = prestige, O = official, N = number of learners."
+  },
+  {
+    "objectID": "slides/index.html#number-of-learners-simulate",
+    "href": "slides/index.html#number-of-learners-simulate",
+    "title": "Causal Inference for linguistics",
+    "section": "Number of learners: simulate",
+    "text": "Number of learners: simulate\n\n\n\n\n\n\n\n\n\n\nset.seed(9988)\n\nn &lt;- 100\np &lt;- 0.1\n\nlearn_df &lt;- tibble(\n  prestige = rnorm(n, mean = 0, sd = 1),\n  official = rbinom(n, size = 1, prob = 0.3)\n) |&gt; \n  mutate(\n    n_learn = 0.4 * prestige + 0.2 * official +\n      rnorm(n, mean = 0, sd = 1)\n  )\n\n\n\nP = prestige, O = official, N = number of learners."
+  },
+  {
+    "objectID": "slides/index.html#number-of-learners-regression",
+    "href": "slides/index.html#number-of-learners-regression",
+    "title": "Causal Inference for linguistics",
+    "section": "Number of learners: regression",
+    "text": "Number of learners: regression\n\n\n\n\n\n\n\n\n\n\n\n\ncoll_lm_1 &lt;- lm(\n  prestige ~ official,\n  data = learn_df\n)\n\n\n\n\n\n            Estimate Std. Error\n(Intercept)    0.064      0.129\nofficial       0.004      0.222\n\n\n\n\n\ncoll_lm_2 &lt;- lm(\n  prestige ~ official + n_learn,\n  data = learn_df\n)\n\n\n\n\n\n            Estimate Std. Error\n(Intercept)    0.070      0.118\nofficial      -0.138      0.205\nn_learn        0.384      0.086\n\n\n\n\n\n\nP = prestige, O = official, N = number of learners."
+  },
+  {
+    "objectID": "slides/index.html#conditional-independences",
+    "href": "slides/index.html#conditional-independences",
+    "title": "Causal Inference for linguistics",
+    "section": "Conditional independences",
+    "text": "Conditional independences\n\n\n\n\n\n\n\n\n\n\n\n\n\\(P \\not\\!\\perp\\!\\!\\!\\perp C\\)\n\\(S \\not\\!\\perp\\!\\!\\!\\perp C\\)\n\\(S \\not\\!\\perp\\!\\!\\!\\perp P\\)\n\n\\(\\perp\\!\\!\\!\\perp\\) = “independent”\n\\(\\not\\!\\perp\\!\\!\\!\\perp\\) = “not independent”\n\n\n\n\nC = multicultural context, P = proficiency, S = code-switching. Schächinger Tenés et al. (2023)"
+  },
+  {
+    "objectID": "slides/index.html#conditional-independences-1",
+    "href": "slides/index.html#conditional-independences-1",
+    "title": "Causal Inference for linguistics",
+    "section": "Conditional independences",
+    "text": "Conditional independences\n\n\n\n\n\n\n\n\n\n\n\n\n\\(P \\not\\!\\perp\\!\\!\\!\\perp C\\)\n\\(S \\not\\!\\perp\\!\\!\\!\\perp C\\)\n\\(S \\not\\!\\perp\\!\\!\\!\\perp P | C\\)\n\nP is independent of C\nS is independent of C\nS is independent of P, conditional on C\n\n\n\n\nC = multicultural context, P = proficiency, S = code-switching. Schächinger Tenés et al. (2023)"
+  },
+  {
+    "objectID": "slides/index.html#causal-paths",
+    "href": "slides/index.html#causal-paths",
+    "title": "Causal Inference for linguistics",
+    "section": "Causal paths",
+    "text": "Causal paths\n\n\n\n\n\n\n\n\n\n\n\n\\(P \\rightarrow S\\)\n\\(P \\leftarrow C \\rightarrow S\\)"
+  },
+  {
+    "objectID": "slides/index.html#causal-paths-1",
+    "href": "slides/index.html#causal-paths-1",
+    "title": "Causal Inference for linguistics",
+    "section": "Causal paths",
+    "text": "Causal paths\n\n\n\n\n\n\n\n\n\n\n\n\\(S \\leftarrow C \\rightarrow p\\)"
+  },
+  {
+    "objectID": "slides/index.html#shutting-the-backdoor",
+    "href": "slides/index.html#shutting-the-backdoor",
+    "title": "Causal Inference for linguistics",
+    "section": "Shutting the backdoor",
+    "text": "Shutting the backdoor\n\n\n\nBackdoor recipe\n\n\n\nList all of the paths connecting X (the potential cause of interest) and Y (the outcome).\nClassify each path by whether it is open or closed. A path is open unless it contains a collider.\nClassify each path by whether it is a backdoor path. A backdoor path has an arrow entering X.\nIf there are any open backdoor paths, decide which variable(s) to condition on to close it (if possible)."
+  },
+  {
+    "objectID": "slides/index.html#workplace-and-use-of-prestige-variable",
+    "href": "slides/index.html#workplace-and-use-of-prestige-variable",
+    "title": "Causal Inference for linguistics",
+    "section": "Workplace and use of prestige variable",
+    "text": "Workplace and use of prestige variable\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPath\nOpen\nBackdoor\n\n\n\n\n\\(W \\rightarrow P\\)\nyes\nno\n\n\n\\(W \\leftarrow S \\rightarrow A \\rightarrow E \\rightarrow P\\)\nyes\nyes\n\n\n\\(W \\leftarrow S \\rightarrow A \\rightarrow P\\)\nyes\nyes\n\n\n\\(W \\leftarrow S \\rightarrow E \\rightarrow P\\)\nyes\nyes\n\n\n\\(W \\leftarrow S \\rightarrow E \\leftarrow A \\rightarrow P\\)\nno\nyes\n\n\n\n\n\n\nS = socio-economic status, A = age, E = exposure to prestige, W = workplace style, P = use of prestige."
+  },
+  {
+    "objectID": "slides/index.html#workplace-and-use-of-prestige-adjustment-sets",
+    "href": "slides/index.html#workplace-and-use-of-prestige-adjustment-sets",
+    "title": "Causal Inference for linguistics",
+    "section": "Workplace and use of prestige: adjustment sets",
+    "text": "Workplace and use of prestige: adjustment sets\n\n\n\n\n\n\n\n\n\n\nA, E\nS\n\n\nlm(P ~ W + S)"
+  },
+  {
+    "objectID": "slides/index.html#references",
+    "href": "slides/index.html#references",
+    "title": "Causal Inference for linguistics",
+    "section": "References",
+    "text": "References\n\n\n\n\nMcElreath, Richard. 2020. Statistical Rethinking: A Bayesian Course with Examples in R and Stan. Second edition. Chapman & Hall/CRC Texts in Statistical Science Series. CRC Press.\n\n\nPaap, Kenneth R. 2014. “Bilingual Advantages in Executive Functioning: Problems in Convergent Validity, Discriminant Validity, and the Identification of the Theoretical Constructs.” Frontiers in Psychology 5. https://doi.org/10.3389/fpsyg.2014.00962.\n\n\nPander Maat, Henk. 2017. “Zinslengte en zinscomplexiteit: Een corpusbenadering.” Tijdschrift voor Taalbeheersing 39 (3): 297–328. https://doi.org/10.5117/TVT2017.3.PAND.\n\n\nSchächinger Tenés, L. T., J. C. Weiner-Bühler, L. Volpin, A. Grob, K. Skoruppa, and R. K. Segerer. 2023. “Language Proficiency Predictors of Code-Switching Behavior in Dual-Language-Learning Children.” Bilingualism: Language and Cognition 26 (5): 942–58. https://doi.org/10.1017/S1366728923000081.\n\n\nWu, Shijie, Ryan Cotterell, and Timothy O’Donnell. 2019. “Morphological Irregularity Correlates with Frequency.” Proceedings of the 57th Annual Meeting of the Association for Computational Linguistics (Florence, Italy), 5117–26. https://doi.org/10.18653/v1/P19-1505."
+  },
+  {
+    "objectID": "LICENSE.html",
+    "href": "LICENSE.html",
+    "title": "Causal Inference",
+    "section": "",
+    "text": "This repository © 2026 by Stefano Coretta is licensed under CC BY-SA 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/4.0/\nSome of the images in img/ are licensed by their sources (see slides)."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Causal Inference: correlation is causation",
+    "section": "",
+    "text": "This is the website of the STeW workshop Causal inference: correlation is causation.\n\n\n\n\n\n\n\nLevel\n🟠 Intermediate\n\n\nDescription\nIn this workshop, you will learn the basics of causal inference and how regression models can help estimate causal effects. Causal inference is based on the theory of Directed Acyclic Graphs (DAGs), which will be introduced with examples from linguistics.\n\n\nPrerequisites\nFamiliarity with regression models is necessary to understand the application of DAG theory to data analysis, but anyone with at least some prior statistical background is welcome to join.\n\n\nRecording"
+  }
+]

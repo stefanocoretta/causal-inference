@@ -1,5 +1,5 @@
 ---
-title: "Causal Inference"
+title: "Causal Inference for linguistics"
 subtitle: "Correlation *is* causation"
 author: "Stefano Coretta"
 date: 20/05/2026
@@ -711,47 +711,56 @@ plant_dag
 ::::::: columns
 :::: column
 ```{r}
-#| label: mod-lm-1
+#| label: med-lm-1
 #| echo: true
 
-mod_lm_1 <- lm(P ~ B, data = pla_df)
+med_lm_1 <- lm(P ~ B, data = pla_df)
 ```
 
 ::: {.fragment style="font-size: 30pt;"}
 <br>
 
 ```{r}
-coef(summary(mod_lm_1))[, 1:2] |> round(3)
+coef(summary(med_lm_1))[, 1:2] |> round(3)
 ```
 :::
 ::::
 
 :::: {.column .fragment}
 ```{r}
-#| label: mod-lm-2
+#| label: med-lm-2
 #| echo: true
 
-mod_lm_2 <- lm(P ~ B + R, data = pla_df)
+med_lm_2 <- lm(P ~ B + R, data = pla_df)
 ```
 
 ::: {.fragment style="font-size: 30pt;"}
 <br>
 
 ```{r}
-coef(summary(mod_lm_2))[, 1:2] |> round(3)
+coef(summary(med_lm_2))[, 1:2] |> round(3)
 ```
 :::
 ::::
 :::::::
 
-## Regression: collider {.nostretch}
+## Number of learners (collider)
 
 ```{r}
-#| label: collider-dag
-#| fig-asp: 0.25
-#| out-width: 40%
+#| label: popular-dag
+#| fig-asp: 1
+#| fig-width: 5
 
-ggplot(d3, aes(x = x, y = y, xend = xend, yend = yend)) +
+popular <- dagify(
+  N ~ P, N ~ O,
+  coords = tibble(
+    name = c("P", "O", "N"),
+    x = c(1, 2, 1.5),
+    y = c(2, 2, 1)
+  )
+)
+
+popular_dag <- ggplot(popular, aes(x = x, y = y, xend = xend, yend = yend)) +
   geom_dag_edges(
     end_cap = ggraph::circle(15, "mm"),
     start_cap = ggraph::circle(15, "mm")
@@ -763,17 +772,66 @@ ggplot(d3, aes(x = x, y = y, xend = xend, yend = yend)) +
     panel.background = element_rect(fill = "transparent", colour = NA),
     plot.background  = element_rect(fill = "transparent", colour = NA)
   )
+
+popular_dag
 ```
 
-::::::: {.columns .fragment}
+::: aside
+P = prestige, O = official, N = number of learners.
+:::
+
+## Number of learners: simulate {.nostretch}
+
+```{r}
+#| label: popular-dag-2
+#| fig-asp: 0.25
+#| out-width: 40%
+
+popular_dag
+```
+
+```{r}
+#| label: popular-sim
+#| echo: true
+
+set.seed(9988)
+
+n <- 100
+p <- 0.1
+
+learn_df <- tibble(
+  prestige = rnorm(n, mean = 0, sd = 1),
+  official = rbinom(n, size = 1, prob = 0.3)
+) |> 
+  mutate(
+    n_learn = 0.4 * prestige + 0.2 * official +
+      rnorm(n, mean = 0, sd = 1)
+  )
+```
+
+::: aside
+P = prestige, O = official, N = number of learners.
+:::
+
+## Number of learners: regression {.nostretch}
+
+```{r}
+#| label: popular-dag-3
+#| fig-asp: 0.25
+#| out-width: 40%
+
+popular_dag
+```
+
+::::::: columns
 :::: column
 ```{r}
 #| label: coll-lm-1
 #| echo: true
 
 coll_lm_1 <- lm(
-  trustworthiness ~ newsworthiness,
-  data = coll
+  prestige ~ official,
+  data = learn_df
 )
 ```
 
@@ -792,8 +850,8 @@ coef(summary(coll_lm_1))[, 1:2] |> round(3)
 #| echo: true
 
 coll_lm_2 <- lm(
-  trustworthiness ~ newsworthiness + selected,
-  data = coll
+  prestige ~ official + n_learn,
+  data = learn_df
 )
 ```
 
@@ -806,6 +864,10 @@ coef(summary(coll_lm_2))[, 1:2] |> round(3)
 :::
 ::::
 :::::::
+
+::: aside
+P = prestige, O = official, N = number of learners.
+:::
 
 ## Conditional independences {.nostretch}
 
