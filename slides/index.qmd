@@ -1133,37 +1133,31 @@ S
 
 ## Limitations
 
-<br>
-
-::::: columns
-::: {.column width="50%"}
-![](../img/flaticon/checked.png){width="100" fig-align="center"}
+::::::::: my-flex-grid
+::: {.my-cell .img}
+![](../img/flaticon/checked.png){width="125"}
 :::
 
-::: {.column width="50%"}
+::: {.my-cell .text}
 It assumes DAG is correct.
 :::
-:::::
 
-::::: {.columns .fragment}
-::: {.column width="50%"}
-![](../img/flaticon/anonymous-man.png){width="100" fig-align="center"}
+::: {.my-cell .img}
+![](../img/flaticon/anonymous-man.png){width="125"}
 :::
 
-::: {.column width="50%"}
+::: {.my-cell .text}
 Adjustment variables should be observable.
 :::
-:::::
 
-::::: {.columns .fragment}
-::: {.column width="50%"}
-![](../img/flaticon/strange.png){width="100" fig-align="center"}
+::: {.my-cell .img}
+![](../img/flaticon/strange.png){width="125"}
 :::
 
-::: {.column width="50%"}
+::: {.my-cell .text}
 Complex systems require dynamic system modelling.
 :::
-:::::
+:::::::::
 
 :::: aside
 ::: {style="font-size: 0.5em;"}
@@ -1172,5 +1166,31 @@ Complex systems require dynamic system modelling.
 ::::
 
 ## Summary
+
+::::::::: my-flex-grid
+::: {.my-cell .img}
+![](../img/correlation.png){width="125"}
+:::
+
+::: {.my-cell .text}
+Correlation *is* causation (if you use causal inference).
+:::
+
+::: {.my-cell .img}
+![](../img/dag.png){width="125"}
+:::
+
+::: {.my-cell .text}
+Directed Acyclic Graphs (DAGs).
+:::
+
+::: {.my-cell .img}
+![](../img/variables.png){width="125"}
+:::
+
+::: {.my-cell .text}
+Choose your covariates carefully.
+:::
+:::::::::
 
 ## References

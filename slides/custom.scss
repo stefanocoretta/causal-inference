@@ -110,3 +110,31 @@ $presentation-title-slide-text-align: left;
   font-size: 0.5em;
   color: gray;
 }
+
+.my-flex-grid {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-template-rows: repeat(3, 1fr);
+  height: 70vh;
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* shared cell styling */
+.my-cell {
+  display: flex;
+  align-items: center;   /* vertical centring */
+  height: 100%;
+}
+
+/* first column: images */
+.my-cell .img {
+  justify-content: center; /* horizontal centring */
+}
+
+/* second column: text */
+.my-cell .text {
+  justify-content: flex-start;
+  text-align: left;
+  padding-left: 1rem; /* optional breathing room */
+}

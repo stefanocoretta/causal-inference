@@ -118,7 +118,7 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-70e7bd63f2cccd81fd1ac4f4302082ed.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-fdcf2286d5891fd1b52d65396830ff7d.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -294,7 +294,7 @@ Stefano Coretta
 </div></aside></section>
 <section id="four-path-types" class="slide level2">
 <h2>Four path types</h2>
-<div class="cell quarto-layout-panel" data-layout-nrow="2" data-layout-ncol="2" data-layout-align="center">
+<div class="cell quarto-layout-panel" data-layout-ncol="2" data-layout-align="center" data-layout-nrow="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
@@ -451,7 +451,7 @@ Stefano Coretta
 </div></aside></section>
 <section id="confound-vs-mediator" class="slide level2">
 <h2>Confound vs Mediator</h2>
-<div class="cell quarto-layout-panel" data-layout-ncol="2" data-layout-align="center">
+<div class="cell quarto-layout-panel" data-layout-align="center" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
@@ -1012,37 +1012,26 @@ n_learn        0.384      0.086</code></pre>
 </section>
 <section id="limitations" class="slide level2">
 <h2>Limitations</h2>
-<p><br></p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../img/flaticon/checked.png" class="quarto-figure quarto-figure-center" width="100"></p>
-</figure>
+<div class="my-flex-grid">
+<div class="my-cell img">
+<p><img data-src="../img/flaticon/checked.png" width="125"></p>
 </div>
-</div><div class="column" style="width:50%;">
+<div class="my-cell text">
 <p>It assumes DAG is correct.</p>
-</div></div>
-<div class="columns fragment">
-<div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../img/flaticon/anonymous-man.png" class="quarto-figure quarto-figure-center" width="100"></p>
-</figure>
 </div>
-</div><div class="column" style="width:50%;">
+<div class="my-cell img">
+<p><img data-src="../img/flaticon/anonymous-man.png" width="125"></p>
+</div>
+<div class="my-cell text">
 <p>Adjustment variables should be observable.</p>
-</div></div>
-<div class="columns fragment">
-<div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../img/flaticon/strange.png" class="quarto-figure quarto-figure-center" width="100"></p>
-</figure>
 </div>
-</div><div class="column" style="width:50%;">
+<div class="my-cell img">
+<p><img data-src="../img/flaticon/strange.png" width="125"></p>
+</div>
+<div class="my-cell text">
 <p>Complex systems require dynamic system modelling.</p>
-</div></div>
+</div>
+</div>
 
 <aside><div>
 <div style="font-size: 0.5em;">
@@ -1051,6 +1040,26 @@ n_learn        0.384      0.086</code></pre>
 </div></aside></section>
 <section id="summary" class="slide level2">
 <h2>Summary</h2>
+<div class="my-flex-grid">
+<div class="my-cell img">
+<p><img data-src="../img/correlation.png" width="125"></p>
+</div>
+<div class="my-cell text">
+<p>Correlation <em>is</em> causation (if you use causal inference).</p>
+</div>
+<div class="my-cell img">
+<p><img data-src="../img/dag.png" width="125"></p>
+</div>
+<div class="my-cell text">
+<p>Directed Acyclic Graphs (DAGs).</p>
+</div>
+<div class="my-cell img">
+<p><img data-src="../img/variables.png" width="125"></p>
+</div>
+<div class="my-cell text">
+<p>Choose your covariates carefully.</p>
+</div>
+</div>
 </section>
 <section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>
