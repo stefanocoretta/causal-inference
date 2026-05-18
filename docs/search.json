@@ -263,7 +263,7 @@
     "href": "slides/index.html#workplace-and-use-of-prestige-variable",
     "title": "Causal Inference for linguistics",
     "section": "Workplace and use of prestige variable",
-    "text": "Workplace and use of prestige variable\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPath\nOpen\nBackdoor\n\n\n\n\n\\(W \\rightarrow P\\)\nyes\nno\n\n\n\\(W \\leftarrow S \\rightarrow A \\rightarrow E \\rightarrow P\\)\nyes\nyes\n\n\n\\(W \\leftarrow S \\rightarrow A \\rightarrow P\\)\nyes\nyes\n\n\n\\(W \\leftarrow S \\rightarrow E \\rightarrow P\\)\nyes\nyes\n\n\n\\(W \\leftarrow S \\rightarrow E \\leftarrow A \\rightarrow P\\)\nno\nyes\n\n\n\n\n\n\nS = socio-economic status, A = age, E = exposure to prestige, W = workplace style, P = use of prestige."
+    "text": "Workplace and use of prestige variable\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nPath\nOpen\nBackdoor\n\n\n\n\n\\(W \\rightarrow P\\)\nyes\nno\n\n\n\\(W \\leftarrow S \\rightarrow A \\rightarrow E \\rightarrow P\\)\nyes\nyes\n\n\n\\(W \\leftarrow S \\rightarrow A \\rightarrow P\\)\nyes\nyes\n\n\n\\(W \\leftarrow S \\rightarrow E \\rightarrow P\\)\nyes\nyes\n\n\n\\(W \\leftarrow S \\rightarrow E \\leftarrow A \\rightarrow P\\)\nno\nyes\n\n\n\n\n\n\nS = socio-economic status, A = exposure age, E = exposure degree, W = workplace style, P = use of prestige."
   },
   {
     "objectID": "slides/index.html#workplace-and-use-of-prestige-adjustment-sets",
@@ -292,5 +292,26 @@
     "title": "Causal Inference: correlation is causation",
     "section": "",
     "text": "This is the website of the STeW workshop Causal inference: correlation is causation.\n\n\n\n\n\n\n\nLevel\n🟠 Intermediate\n\n\nDescription\nIn this workshop, you will learn the basics of causal inference and how regression models can help estimate causal effects. Causal inference is based on the theory of Directed Acyclic Graphs (DAGs), which will be introduced with examples from linguistics.\n\n\nPrerequisites\nFamiliarity with regression models is necessary to understand the application of DAG theory to data analysis, but anyone with at least some prior statistical background is welcome to join.\n\n\nRecording"
+  },
+  {
+    "objectID": "slides/index.html#dagitty",
+    "href": "slides/index.html#dagitty",
+    "title": "Causal Inference for linguistics",
+    "section": "Dagitty",
+    "text": "Dagitty"
+  },
+  {
+    "objectID": "slides/index.html#limitations",
+    "href": "slides/index.html#limitations",
+    "title": "Causal Inference for linguistics",
+    "section": "Limitations",
+    "text": "Limitations\n\n\n\n\n\n\n\n\n\nIt assumes DAG is correct.\n\n\n\n\n\n\n\n\n\nAdjustment variables should be observable.\n\n\n\n\n\n\n\n\n\nComplex systems require dynamic system modelling.\n\n\n\n\nTick icons created by Roundicons - Flaticon Unknown icons created by Freepik - Flaticon Strange icons created by Jagat Icon - Flaticon"
+  },
+  {
+    "objectID": "slides/index.html#summary",
+    "href": "slides/index.html#summary",
+    "title": "Causal Inference for linguistics",
+    "section": "Summary",
+    "text": "Summary"
   }
 ]

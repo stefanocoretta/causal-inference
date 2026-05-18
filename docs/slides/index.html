@@ -118,7 +118,7 @@
     div.csl-indent {
       margin-left: 2em;
     }  </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-bdde3ee7855fc2d7c6e06b83bcad8dbf.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-70e7bd63f2cccd81fd1ac4f4302082ed.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -294,7 +294,7 @@ Stefano Coretta
 </div></aside></section>
 <section id="four-path-types" class="slide level2">
 <h2>Four path types</h2>
-<div class="cell quarto-layout-panel" data-layout-ncol="2" data-layout-nrow="2" data-layout-align="center">
+<div class="cell quarto-layout-panel" data-layout-nrow="2" data-layout-ncol="2" data-layout-align="center">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
@@ -981,7 +981,7 @@ n_learn        0.384      0.086</code></pre>
 </div>
 
 <aside><div>
-<p>S = socio-economic status, A = age, E = exposure to prestige, W = workplace style, P = use of prestige.</p>
+<p>S = socio-economic status, A = exposure age, E = exposure degree, W = workplace style, P = use of prestige.</p>
 </div></aside></section>
 <section id="workplace-and-use-of-prestige-adjustment-sets" class="slide level2 nostretch">
 <h2>Workplace and use of prestige: adjustment sets</h2>
@@ -1001,6 +1001,56 @@ n_learn        0.384      0.086</code></pre>
 <div class="fragment" style="text-align: center; font-size: 1.5em;">
 <p><code>lm(P ~ W + S)</code></p>
 </div>
+</section>
+<section id="dagitty" class="slide level2">
+<h2>Dagitty</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="https://www.dagitty.net/dags.html"><img data-src="../img/dagitty.png" class="quarto-figure quarto-figure-center"></a></p>
+</figure>
+</div>
+</section>
+<section id="limitations" class="slide level2">
+<h2>Limitations</h2>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../img/flaticon/checked.png" class="quarto-figure quarto-figure-center" width="100"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p>It assumes DAG is correct.</p>
+</div></div>
+<div class="columns fragment">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../img/flaticon/anonymous-man.png" class="quarto-figure quarto-figure-center" width="100"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p>Adjustment variables should be observable.</p>
+</div></div>
+<div class="columns fragment">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../img/flaticon/strange.png" class="quarto-figure quarto-figure-center" width="100"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<p>Complex systems require dynamic system modelling.</p>
+</div></div>
+
+<aside><div>
+<div style="font-size: 0.5em;">
+<p><a href="https://www.flaticon.com/free-icons/tick" title="tick icons">Tick icons created by Roundicons - Flaticon</a> <a href="https://www.flaticon.com/free-icons/unknown" title="unknown icons">Unknown icons created by Freepik - Flaticon</a> <a href="https://www.flaticon.com/free-icons/strange" title="strange icons">Strange icons created by Jagat Icon - Flaticon</a></p>
+</div>
+</div></aside></section>
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
 </section>
 <section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>

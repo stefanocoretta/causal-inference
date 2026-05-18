@@ -1104,7 +1104,7 @@ wu
 :::
 
 ::: aside
-S = socio-economic status, A = age, E = exposure to prestige, W = workplace style, P = use of prestige.
+S = socio-economic status, A = exposure age, E = exposure degree, W = workplace style, P = use of prestige.
 :::
 
 ## Workplace and use of prestige: adjustment sets {.nostretch}
@@ -1126,5 +1126,51 @@ S
 ::: {.fragment style="text-align: center; font-size: 1.5em;"}
 `lm(P ~ W + S)`
 :::
+
+## Dagitty
+
+[![](../img/dagitty.png){fig-align="center"}](https://www.dagitty.net/dags.html)
+
+## Limitations
+
+<br>
+
+::::: columns
+::: {.column width="50%"}
+![](../img/flaticon/checked.png){width="100" fig-align="center"}
+:::
+
+::: {.column width="50%"}
+It assumes DAG is correct.
+:::
+:::::
+
+::::: {.columns .fragment}
+::: {.column width="50%"}
+![](../img/flaticon/anonymous-man.png){width="100" fig-align="center"}
+:::
+
+::: {.column width="50%"}
+Adjustment variables should be observable.
+:::
+:::::
+
+::::: {.columns .fragment}
+::: {.column width="50%"}
+![](../img/flaticon/strange.png){width="100" fig-align="center"}
+:::
+
+::: {.column width="50%"}
+Complex systems require dynamic system modelling.
+:::
+:::::
+
+:::: aside
+::: {style="font-size: 0.5em;"}
+<a href="https://www.flaticon.com/free-icons/tick" title="tick icons">Tick icons created by Roundicons - Flaticon</a> <a href="https://www.flaticon.com/free-icons/unknown" title="unknown icons">Unknown icons created by Freepik - Flaticon</a> <a href="https://www.flaticon.com/free-icons/strange" title="strange icons">Strange icons created by Jagat Icon - Flaticon</a>
+:::
+::::
+
+## Summary
 
 ## References
