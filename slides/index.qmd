@@ -1133,31 +1133,33 @@ S
 
 ## Limitations
 
-::::::::: my-flex-grid
-::: {.my-cell .img}
+:::::::::: fill-center
+::::::::: grid2
+::: div
 ![](../img/flaticon/checked.png){width="125"}
 :::
 
-::: {.my-cell .text}
+::: div
 It assumes DAG is correct.
 :::
 
-::: {.my-cell .img}
+::: div
 ![](../img/flaticon/anonymous-man.png){width="125"}
 :::
 
-::: {.my-cell .text}
+::: div
 Adjustment variables should be observable.
 :::
 
-::: {.my-cell .img}
+::: div
 ![](../img/flaticon/strange.png){width="125"}
 :::
 
-::: {.my-cell .text}
+::: div
 Complex systems require dynamic system modelling.
 :::
 :::::::::
+::::::::::
 
 :::: aside
 ::: {style="font-size: 0.5em;"}
@@ -1167,30 +1169,32 @@ Complex systems require dynamic system modelling.
 
 ## Summary
 
-::::::::: my-flex-grid
-::: {.my-cell .img}
+:::::::::: fill-center
+::::::::: grid2
+::: div
 ![](../img/correlation.png){width="125"}
 :::
 
-::: {.my-cell .text}
+::: div
 Correlation *is* causation (if you use causal inference).
 :::
 
-::: {.my-cell .img}
+::: div
 ![](../img/dag.png){width="125"}
 :::
 
-::: {.my-cell .text}
+::: div
 Directed Acyclic Graphs (DAGs).
 :::
 
-::: {.my-cell .img}
+::: div
 ![](../img/variables.png){width="125"}
 :::
 
-::: {.my-cell .text}
+::: div
 Choose your covariates carefully.
 :::
 :::::::::
+::::::::::
 
 ## References

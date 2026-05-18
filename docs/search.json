@@ -284,14 +284,14 @@
     "href": "slides/index.html#limitations",
     "title": "Causal Inference for linguistics",
     "section": "Limitations",
-    "text": "Limitations\n\n\n\n\n\nIt assumes DAG is correct.\n\n\n\n\n\nAdjustment variables should be observable.\n\n\n\n\n\nComplex systems require dynamic system modelling.\n\n\n\n\n\nTick icons created by Roundicons - Flaticon Unknown icons created by Freepik - Flaticon Strange icons created by Jagat Icon - Flaticon"
+    "text": "Limitations\n\n\n\n\n\n\nIt assumes DAG is correct.\n\n\n\n\n\nAdjustment variables should be observable.\n\n\n\n\n\nComplex systems require dynamic system modelling.\n\n\n\n\n\n\nTick icons created by Roundicons - Flaticon Unknown icons created by Freepik - Flaticon Strange icons created by Jagat Icon - Flaticon"
   },
   {
     "objectID": "slides/index.html#summary",
     "href": "slides/index.html#summary",
     "title": "Causal Inference for linguistics",
     "section": "Summary",
-    "text": "Summary\n\n\n\n\n\nCorrelation is causation (if you use causal inference).\n\n\n\n\n\nDirected Acyclic Graphs (DAGs).\n\n\n\n\n\nChoose your covariates carefully."
+    "text": "Summary\n\n\n\n\n\n\nCorrelation is causation (if you use causal inference).\n\n\n\n\n\nDirected Acyclic Graphs (DAGs).\n\n\n\n\n\nChoose your covariates carefully."
   },
   {
     "objectID": "slides/index.html#references",

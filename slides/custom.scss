@@ -111,30 +111,34 @@ $presentation-title-slide-text-align: left;
   color: gray;
 }
 
-.my-flex-grid {
-  display: grid;
-  grid-template-columns: 20% 80%;
-  grid-template-rows: repeat(3, 1fr);
-  height: 70vh;
-  width: 80%;
+/* Grid system for image + text */
+
+.reveal .slides section.present .fill-center {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.reveal .slides .grid2 {
+  display: grid !important;
+  grid-template-columns: 1fr 4fr;
+  column-gap: 2rem;
+  row-gap: 1.5rem;
+  align-items: center;
+  width: 70%;
   margin: 0 auto;
 }
 
-/* shared cell styling */
-.my-cell {
-  display: flex;
-  align-items: center;   /* vertical centring */
-  height: 100%;
+.reveal .slides .grid2 > div {
+  display: block;
 }
 
-/* first column: images */
-.my-cell .img {
-  justify-content: center; /* horizontal centring */
+.reveal .slides .grid2 p {
+  margin: 0 !important;
 }
 
-/* second column: text */
-.my-cell .text {
-  justify-content: flex-start;
-  text-align: left;
-  padding-left: 1rem; /* optional breathing room */
+.reveal .slides .grid2 img {
+  display: block;
+  margin: 0 auto;
 }
