@@ -312,6 +312,13 @@
     "href": "index.html",
     "title": "Causal Inference: correlation is causation",
     "section": "",
-    "text": "This is the website of the STeW workshop Causal inference: correlation is causation.\n\n\n\n\n\n\n\nLevel\n🟠 Intermediate\n\n\nDescription\nIn this workshop, you will learn the basics of causal inference and how regression models can help estimate causal effects. Causal inference is based on the theory of Directed Acyclic Graphs (DAGs), which will be introduced with examples from linguistics.\n\n\nPrerequisites\nFamiliarity with regression models is necessary to understand the application of DAG theory to data analysis, but anyone with at least some prior statistical background is welcome to join.\n\n\nRecording"
+    "text": "This is the website of the STeW workshop Causal inference: correlation is causation."
+  },
+  {
+    "objectID": "index.html#further-readings",
+    "href": "index.html#further-readings",
+    "title": "Causal Inference: correlation is causation",
+    "section": "Further readings",
+    "text": "Further readings\n\nMcElreath (2020): Chapters 5-6.\n\nThere are also video lectures, available here: https://github.com/rmcelreath/stat_rethinking_2026.\n\nRohrer (2018), Rohrer (2024).\nPearl (2014) and Pearl’s The Book of Why. Judea Pearl is the founder of causal inference based on do-calculus, which is the one adopted in McElreath (2020) and in this workshop.\nGreenland (2011), Pearce and Lawlor (2016)."
   }
 ]

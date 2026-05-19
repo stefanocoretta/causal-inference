@@ -23,7 +23,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -112,8 +131,14 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#further-readings" id="toc-further-readings" class="nav-link active" data-scroll-target="#further-readings">Further readings</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -140,8 +165,8 @@ ul.task-list li input[type="checkbox"] {
 <p>This is the website of the <a href="https://uoelel.github.io/stew.html">STeW</a> workshop <em>Causal inference: correlation is causation</em>.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 18%">
-<col style="width: 81%">
+<col style="width: 22%">
+<col style="width: 77%">
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -162,10 +187,42 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
+<section id="further-readings" class="level2">
+<h2 class="anchored" data-anchor-id="further-readings">Further readings</h2>
+<ul>
+<li><p><span class="citation" data-cites="mcelreath2020">McElreath (<a href="#ref-mcelreath2020" role="doc-biblioref">2020</a>)</span>: Chapters 5-6.</p>
+<ul>
+<li>There are also video lectures, available here: <a href="https://github.com/rmcelreath/stat_rethinking_2026" class="uri">https://github.com/rmcelreath/stat_rethinking_2026</a>.</li>
+</ul></li>
+<li><p><span class="citation" data-cites="rohrer2018">Rohrer (<a href="#ref-rohrer2018" role="doc-biblioref">2018</a>)</span>, <span class="citation" data-cites="rohrer2024">Rohrer (<a href="#ref-rohrer2024" role="doc-biblioref">2024</a>)</span>.</p></li>
+<li><p><span class="citation" data-cites="pearl2014">Pearl (<a href="#ref-pearl2014" role="doc-biblioref">2014</a>)</span> and Pearl’s <em>The Book of Why</em>. Judea Pearl is the founder of causal inference based on <em>do</em>-calculus, which is the one adopted in <span class="citation" data-cites="mcelreath2020">McElreath (<a href="#ref-mcelreath2020" role="doc-biblioref">2020</a>)</span> and in this workshop.</p></li>
+<li><p><span class="citation" data-cites="greenland2011">Greenland (<a href="#ref-greenland2011" role="doc-biblioref">2011</a>)</span>, <span class="citation" data-cites="pearce2016">Pearce and Lawlor (<a href="#ref-pearce2016" role="doc-biblioref">2016</a>)</span>.</p></li>
+</ul>
 
 
 
-</main> <!-- /main -->
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-greenland2011" class="csl-entry" role="listitem">
+Greenland, Sander. 2011. <em>The Logic and Philosophy of Causal Inference</em>. Elsevier. <a href="https://doi.org/10.1016/B978-0-444-51862-0.50026-5">https://doi.org/10.1016/B978-0-444-51862-0.50026-5</a>.
+</div>
+<div id="ref-mcelreath2020" class="csl-entry" role="listitem">
+McElreath, Richard. 2020. <em>Statistical Rethinking: A Bayesian Course with Examples in r and Stan</em>. Second edition. Chapman &amp; Hall/CRC Texts in Statistical Science Series. CRC Press.
+</div>
+<div id="ref-pearce2016" class="csl-entry" role="listitem">
+Pearce, Neil, and Debbie A Lawlor. 2016. <span>“Causal Inference<span></span>so Much More Than Statistics.”</span> <em>International Journal of Epidemiology</em> 45 (6): 1895–903. <a href="https://doi.org/10.1093/ije/dyw328">https://doi.org/10.1093/ije/dyw328</a>.
+</div>
+<div id="ref-pearl2014" class="csl-entry" role="listitem">
+Pearl, Judea. 2014. <span>“Interpretation and Identification of Causal Mediation.”</span> <em>Psychological Methods</em> 19 (4): 459–81. <a href="https://doi.org/10.1037/a0036434">https://doi.org/10.1037/a0036434</a>.
+</div>
+<div id="ref-rohrer2018" class="csl-entry" role="listitem">
+Rohrer, Julia M. 2018. <span>“Thinking Clearly about Correlations and Causation: Graphical Causal Models for Observational Data.”</span> <em>Advances in Methods and Practices in Psychological Science</em> 1 (1): 2742. <a href="https://doi.org/10.1177/2515245917745629">https://doi.org/10.1177/2515245917745629</a>.
+</div>
+<div id="ref-rohrer2024" class="csl-entry" role="listitem">
+Rohrer, Julia M. 2024. <span>“Causal Inference for Psychologists Who Think That Causal Inference Is Not for Them.”</span> <em>Social and Personality Psychology Compass</em> 18 (3): e12948. <a href="https://doi.org/10.1111/spc3.12948">https://doi.org/10.1111/spc3.12948</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
