@@ -294,19 +294,19 @@ Stefano Coretta
 </div></aside></section>
 <section id="four-path-types" class="slide level2">
 <h2>Four path types</h2>
-<div class="cell quarto-layout-panel" data-layout-align="center" data-layout-nrow="2" data-layout-ncol="2">
+<div class="cell quarto-layout-panel" data-layout-align="center" data-layout-ncol="2" data-layout-nrow="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="index_files/figure-revealjs/elemental-1.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="index_files/figure-revealjs/elemental-1.png" class="quarto-figure quarto-figure-center" width="384"></p>
 </figure>
 </div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="index_files/figure-revealjs/elemental-2.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="index_files/figure-revealjs/elemental-2.png" class="quarto-figure quarto-figure-center" width="384"></p>
 </figure>
 </div>
 </div>
@@ -315,14 +315,14 @@ Stefano Coretta
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="index_files/figure-revealjs/elemental-3.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="index_files/figure-revealjs/elemental-3.png" class="quarto-figure quarto-figure-center" width="384"></p>
 </figure>
 </div>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="index_files/figure-revealjs/elemental-4.png" class="quarto-figure quarto-figure-center" width="960"></p>
+<p><img data-src="index_files/figure-revealjs/elemental-4.png" class="quarto-figure quarto-figure-center" width="384"></p>
 </figure>
 </div>
 </div>
@@ -342,10 +342,10 @@ Stefano Coretta
 <span id="cb1-2"><a></a></span>
 <span id="cb1-3"><a></a>n <span class="ot">&lt;-</span> <span class="dv">100</span></span>
 <span id="cb1-4"><a></a></span>
-<span id="cb1-5"><a></a>z <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>)</span>
+<span id="cb1-5"><a></a>z <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n)</span>
 <span id="cb1-6"><a></a></span>
-<span id="cb1-7"><a></a>x <span class="ot">&lt;-</span> <span class="fl">0.4</span> <span class="sc">*</span> z <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="fl">0.1</span>)</span>
-<span id="cb1-8"><a></a>y <span class="ot">&lt;-</span> <span class="fl">0.7</span> <span class="sc">*</span> z <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="fl">0.1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-7"><a></a>x <span class="ot">&lt;-</span> <span class="fl">0.4</span> <span class="sc">*</span> z <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="fl">0.1</span>)</span>
+<span id="cb1-8"><a></a>y <span class="ot">&lt;-</span> <span class="fl">0.7</span> <span class="sc">*</span> z <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="fl">0.1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column fragment" style="width:60%;">
 <div class="cell" data-layout-align="center">
@@ -402,10 +402,10 @@ Stefano Coretta
 <span id="cb2-2"><a></a></span>
 <span id="cb2-3"><a></a>n <span class="ot">&lt;-</span> <span class="dv">100</span></span>
 <span id="cb2-4"><a></a></span>
-<span id="cb2-5"><a></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>)</span>
+<span id="cb2-5"><a></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n)</span>
 <span id="cb2-6"><a></a></span>
-<span id="cb2-7"><a></a>z <span class="ot">&lt;-</span> <span class="fl">0.4</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="fl">0.1</span>)</span>
-<span id="cb2-8"><a></a>y <span class="ot">&lt;-</span> <span class="fl">0.7</span> <span class="sc">*</span> z <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="fl">0.1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-7"><a></a>z <span class="ot">&lt;-</span> <span class="fl">0.4</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="fl">0.1</span>)</span>
+<span id="cb2-8"><a></a>y <span class="ot">&lt;-</span> <span class="fl">0.7</span> <span class="sc">*</span> z <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="fl">0.1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div><div class="column fragment" style="width:60%;">
 <div class="cell" data-layout-align="center">
@@ -583,10 +583,10 @@ Stefano Coretta
 <span id="cb4-2"><a></a></span>
 <span id="cb4-3"><a></a>n <span class="ot">&lt;-</span> <span class="dv">100</span></span>
 <span id="cb4-4"><a></a></span>
-<span id="cb4-5"><a></a>C <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>)</span>
+<span id="cb4-5"><a></a>C <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n)</span>
 <span id="cb4-6"><a></a></span>
-<span id="cb4-7"><a></a>E <span class="ot">&lt;-</span> <span class="fl">0.4</span> <span class="sc">*</span> C <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="fl">0.1</span>)</span>
-<span id="cb4-8"><a></a>L <span class="ot">&lt;-</span> <span class="fl">0.7</span> <span class="sc">*</span> C <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="fl">0.1</span>)</span>
+<span id="cb4-7"><a></a>E <span class="ot">&lt;-</span> <span class="fl">0.4</span> <span class="sc">*</span> C <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="fl">0.1</span>)</span>
+<span id="cb4-8"><a></a>L <span class="ot">&lt;-</span> <span class="fl">0.7</span> <span class="sc">*</span> C <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="fl">0.1</span>)</span>
 <span id="cb4-9"><a></a></span>
 <span id="cb4-10"><a></a>col_df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(C, E, L)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -671,10 +671,10 @@ C              0.690      0.042</code></pre>
 <span id="cb9-2"><a></a></span>
 <span id="cb9-3"><a></a>n <span class="ot">&lt;-</span> <span class="dv">100</span></span>
 <span id="cb9-4"><a></a></span>
-<span id="cb9-5"><a></a>B <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>)</span>
+<span id="cb9-5"><a></a>B <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n)</span>
 <span id="cb9-6"><a></a></span>
-<span id="cb9-7"><a></a>R <span class="ot">&lt;-</span> <span class="fl">0.4</span> <span class="sc">*</span> B <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="fl">0.1</span>)</span>
-<span id="cb9-8"><a></a>P <span class="ot">&lt;-</span> <span class="fl">0.7</span> <span class="sc">*</span> R <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">0</span>, <span class="fl">0.1</span>)</span>
+<span id="cb9-7"><a></a>R <span class="ot">&lt;-</span> <span class="fl">0.4</span> <span class="sc">*</span> B <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="fl">0.1</span>)</span>
+<span id="cb9-8"><a></a>P <span class="ot">&lt;-</span> <span class="fl">0.7</span> <span class="sc">*</span> R <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="fl">0.1</span>)</span>
 <span id="cb9-9"><a></a></span>
 <span id="cb9-10"><a></a>pla_df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(B, R, P)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -752,16 +752,15 @@ R              0.719      0.098</code></pre>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">set.seed</span>(<span class="dv">9988</span>)</span>
 <span id="cb14-2"><a></a></span>
 <span id="cb14-3"><a></a>n <span class="ot">&lt;-</span> <span class="dv">100</span></span>
-<span id="cb14-4"><a></a>p <span class="ot">&lt;-</span> <span class="fl">0.1</span></span>
-<span id="cb14-5"><a></a></span>
-<span id="cb14-6"><a></a>learn_df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
-<span id="cb14-7"><a></a>  <span class="at">prestige =</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>),</span>
-<span id="cb14-8"><a></a>  <span class="at">official =</span> <span class="fu">rbinom</span>(n, <span class="at">size =</span> <span class="dv">1</span>, <span class="at">prob =</span> <span class="fl">0.3</span>)</span>
-<span id="cb14-9"><a></a>) <span class="sc">|&gt;</span> </span>
-<span id="cb14-10"><a></a>  <span class="fu">mutate</span>(</span>
-<span id="cb14-11"><a></a>    <span class="at">n_learn =</span> <span class="fl">0.4</span> <span class="sc">*</span> prestige <span class="sc">+</span> <span class="fl">0.2</span> <span class="sc">*</span> official <span class="sc">+</span></span>
-<span id="cb14-12"><a></a>      <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
-<span id="cb14-13"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb14-4"><a></a></span>
+<span id="cb14-5"><a></a>learn_df <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb14-6"><a></a>  <span class="at">prestige =</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>),</span>
+<span id="cb14-7"><a></a>  <span class="at">official =</span> <span class="fu">rbinom</span>(n, <span class="at">size =</span> <span class="dv">1</span>, <span class="at">prob =</span> <span class="fl">0.3</span>)</span>
+<span id="cb14-8"><a></a>) <span class="sc">|&gt;</span> </span>
+<span id="cb14-9"><a></a>  <span class="fu">mutate</span>(</span>
+<span id="cb14-10"><a></a>    <span class="at">n_learn =</span> <span class="fl">0.4</span> <span class="sc">*</span> prestige <span class="sc">+</span> <span class="fl">0.2</span> <span class="sc">*</span> official <span class="sc">+</span></span>
+<span id="cb14-11"><a></a>      <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb14-12"><a></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 <aside><div>
@@ -861,10 +860,10 @@ n_learn        0.384      0.086</code></pre>
 <div class="column" style="width:20%;">
 <p><span class="math inline">\(P \not\!\perp\!\!\!\perp C\)</span></p>
 <p><span class="math inline">\(S \not\!\perp\!\!\!\perp C\)</span></p>
-<p><span class="math inline">\(S \not\!\perp\!\!\!\perp P | C\)</span></p>
+<p><span class="math inline">\(S \perp\!\!\!\perp P | C\)</span></p>
 </div><div class="column fragment" style="width:80%;">
-<p>P is independent of C</p>
-<p>S is independent of C</p>
+<p>P is not independent of C</p>
+<p>S is not independent of C</p>
 <p>S is independent of P, conditional on C</p>
 </div></div>
 

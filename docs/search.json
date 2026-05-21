@@ -60,7 +60,7 @@
     "href": "slides/index.html#confound-simulate",
     "title": "Causal Inference for linguistics",
     "section": "Confound: simulate",
-    "text": "Confound: simulate\n\n\n\nset.seed(9988)\n\nn &lt;- 100\n\nz &lt;- rnorm(100)\n\nx &lt;- 0.4 * z + rnorm(100, 0, 0.1)\ny &lt;- 0.7 * z + rnorm(100, 0, 0.1)"
+    "text": "Confound: simulate\n\n\n\nset.seed(9988)\n\nn &lt;- 100\n\nz &lt;- rnorm(n)\n\nx &lt;- 0.4 * z + rnorm(n, 0, 0.1)\ny &lt;- 0.7 * z + rnorm(n, 0, 0.1)"
   },
   {
     "objectID": "slides/index.html#confound-greater-proficiency-and-code-switching",
@@ -88,7 +88,7 @@
     "href": "slides/index.html#mediator-simulate",
     "title": "Causal Inference for linguistics",
     "section": "Mediator: simulate",
-    "text": "Mediator: simulate\n\n\n\nset.seed(9988)\n\nn &lt;- 100\n\nx &lt;- rnorm(100)\n\nz &lt;- 0.4 * x + rnorm(100, 0, 0.1)\ny &lt;- 0.7 * z + rnorm(100, 0, 0.1)"
+    "text": "Mediator: simulate\n\n\n\nset.seed(9988)\n\nn &lt;- 100\n\nx &lt;- rnorm(n)\n\nz &lt;- 0.4 * x + rnorm(n, 0, 0.1)\ny &lt;- 0.7 * z + rnorm(n, 0, 0.1)"
   },
   {
     "objectID": "slides/index.html#mediator-bilingualism-and-executive-function",
@@ -172,7 +172,7 @@
     "href": "slides/index.html#colonial-history-simulate",
     "title": "Causal Inference for linguistics",
     "section": "Colonial history: simulate",
-    "text": "Colonial history: simulate\n\n\n\n\n\n\n\n\n\n\nset.seed(9988)\n\nn &lt;- 100\n\nC &lt;- rnorm(100)\n\nE &lt;- 0.4 * C + rnorm(100, 0, 0.1)\nL &lt;- 0.7 * C + rnorm(100, 0, 0.1)\n\ncol_df &lt;- tibble(C, E, L)\n\n\n\nC = colonial history, E = economic development, L = language endangerment."
+    "text": "Colonial history: simulate\n\n\n\n\n\n\n\n\n\n\nset.seed(9988)\n\nn &lt;- 100\n\nC &lt;- rnorm(n)\n\nE &lt;- 0.4 * C + rnorm(n, 0, 0.1)\nL &lt;- 0.7 * C + rnorm(n, 0, 0.1)\n\ncol_df &lt;- tibble(C, E, L)\n\n\n\nC = colonial history, E = economic development, L = language endangerment."
   },
   {
     "objectID": "slides/index.html#colonial-history-regression",
@@ -193,7 +193,7 @@
     "href": "slides/index.html#plant-reliance-simulate",
     "title": "Causal Inference for linguistics",
     "section": "Plant reliance: simulate",
-    "text": "Plant reliance: simulate\n\n\n\n\n\n\n\n\n\n\nset.seed(9988)\n\nn &lt;- 100\n\nB &lt;- rnorm(100)\n\nR &lt;- 0.4 * B + rnorm(100, 0, 0.1)\nP &lt;- 0.7 * R + rnorm(100, 0, 0.1)\n\npla_df &lt;- tibble(B, R, P)"
+    "text": "Plant reliance: simulate\n\n\n\n\n\n\n\n\n\n\nset.seed(9988)\n\nn &lt;- 100\n\nB &lt;- rnorm(n)\n\nR &lt;- 0.4 * B + rnorm(n, 0, 0.1)\nP &lt;- 0.7 * R + rnorm(n, 0, 0.1)\n\npla_df &lt;- tibble(B, R, P)"
   },
   {
     "objectID": "slides/index.html#plant-reliance-regression",
@@ -214,7 +214,7 @@
     "href": "slides/index.html#number-of-learners-simulate",
     "title": "Causal Inference for linguistics",
     "section": "Number of learners: simulate",
-    "text": "Number of learners: simulate\n\n\n\n\n\n\n\n\n\n\nset.seed(9988)\n\nn &lt;- 100\np &lt;- 0.1\n\nlearn_df &lt;- tibble(\n  prestige = rnorm(n, mean = 0, sd = 1),\n  official = rbinom(n, size = 1, prob = 0.3)\n) |&gt; \n  mutate(\n    n_learn = 0.4 * prestige + 0.2 * official +\n      rnorm(n, mean = 0, sd = 1)\n  )\n\n\n\nP = prestige, O = official, N = number of learners."
+    "text": "Number of learners: simulate\n\n\n\n\n\n\n\n\n\n\nset.seed(9988)\n\nn &lt;- 100\n\nlearn_df &lt;- tibble(\n  prestige = rnorm(n, mean = 0, sd = 1),\n  official = rbinom(n, size = 1, prob = 0.3)\n) |&gt; \n  mutate(\n    n_learn = 0.4 * prestige + 0.2 * official +\n      rnorm(n, mean = 0, sd = 1)\n  )\n\n\n\nP = prestige, O = official, N = number of learners."
   },
   {
     "objectID": "slides/index.html#number-of-learners-regression",
@@ -235,7 +235,7 @@
     "href": "slides/index.html#conditional-independences-1",
     "title": "Causal Inference for linguistics",
     "section": "Conditional independences",
-    "text": "Conditional independences\n\n\n\n\n\n\n\n\n\n\n\n\n\\(P \\not\\!\\perp\\!\\!\\!\\perp C\\)\n\\(S \\not\\!\\perp\\!\\!\\!\\perp C\\)\n\\(S \\not\\!\\perp\\!\\!\\!\\perp P | C\\)\n\nP is independent of C\nS is independent of C\nS is independent of P, conditional on C\n\n\n\n\nC = multicultural context, P = proficiency, S = code-switching. Schächinger Tenés et al. (2023)"
+    "text": "Conditional independences\n\n\n\n\n\n\n\n\n\n\n\n\n\\(P \\not\\!\\perp\\!\\!\\!\\perp C\\)\n\\(S \\not\\!\\perp\\!\\!\\!\\perp C\\)\n\\(S \\perp\\!\\!\\!\\perp P | C\\)\n\nP is not independent of C\nS is not independent of C\nS is independent of P, conditional on C\n\n\n\n\nC = multicultural context, P = proficiency, S = code-switching. Schächinger Tenés et al. (2023)"
   },
   {
     "objectID": "slides/index.html#causal-paths",

@@ -50,16 +50,19 @@ library(dagitty)
 library(patchwork)
 library(GGally)
 
-gg_dag <- function(dag) {
+gg_dag <- function(dag, size = 20, cap = size / 2, expand_x = 0.1, expand_y = 0.1) {
   ggplot(dag, aes(x = x, y = y, xend = xend, yend = yend)) +
-  geom_dag_edges() +
-  geom_dag_point() +
-  geom_dag_text() +
+  geom_dag_edges(
+    end_cap = ggraph::circle(cap, "mm"),
+    start_cap = ggraph::circle(cap, "mm")
+  ) +
+  geom_dag_point(size = size) +
+  geom_dag_text(size = size / .pt) +
+  expand_plot(expand_x = c(expand_x, expand_x), expand_y = c(expand_y, expand_y)) +
   theme_dag(
     panel.background = element_rect(fill = "transparent", colour = NA),
     plot.background  = element_rect(fill = "transparent", colour = NA)
   )
-  # expand_plot(expand_x = c(0.1, 0.1), expand_y = c(0.1, 0.1))
 }
 ```
 
@@ -129,6 +132,8 @@ C = discourse complexity, L = sentence length, S = subordination frequency.
 #| label: elemental
 #| layout-ncol: 2
 #| layout-nrow: 2
+#| fig-width: 4
+#| fig-height: 3
 
 # Adapted from https://solomon.quarto.pub/sr2/06.html#shutting-the-backdoor
 
@@ -159,10 +164,10 @@ d4 <- dagify(
                   x = c(1, 3, 2, 2),
                   y = c(2, 2, 2, 1.05)))
 
-p1 <- gg_dag(d1) + labs(subtitle = "The Fork")
-p2 <- gg_dag(d2) + labs(subtitle = "The Pipe")
-p3 <- gg_dag(d3) + labs(subtitle = "The Collider")
-p4 <- gg_dag(d4) + labs(subtitle = "The Descendant")
+p1 <- gg_dag(d1) + labs(subtitle = "The Fork") + theme(plot.subtitle = element_text(size = 20))
+p2 <- gg_dag(d2) + labs(subtitle = "The Pipe") + theme(plot.subtitle = element_text(size = 20))
+p3 <- gg_dag(d3) + labs(subtitle = "The Collider") + theme(plot.subtitle = element_text(size = 20))
+p4 <- gg_dag(d4) + labs(subtitle = "The Descendant") + theme(plot.subtitle = element_text(size = 20))
 
 # (p1 | p2 | p3 | p4) &
 #   theme(plot.subtitle = element_text(hjust = 0.5)) &
@@ -194,10 +199,10 @@ set.seed(9988)
 
 n <- 100
 
-z <- rnorm(100)
+z <- rnorm(n)
 
-x <- 0.4 * z + rnorm(100, 0, 0.1)
-y <- 0.7 * z + rnorm(100, 0, 0.1)
+x <- 0.4 * z + rnorm(n, 0, 0.1)
+y <- 0.7 * z + rnorm(n, 0, 0.1)
 ```
 :::
 
@@ -287,10 +292,10 @@ set.seed(9988)
 
 n <- 100
 
-x <- rnorm(100)
+x <- rnorm(n)
 
-z <- 0.4 * x + rnorm(100, 0, 0.1)
-y <- 0.7 * z + rnorm(100, 0, 0.1)
+z <- 0.4 * x + rnorm(n, 0, 0.1)
+y <- 0.7 * z + rnorm(n, 0, 0.1)
 ```
 :::
 
@@ -536,19 +541,7 @@ colonial <- dagify(
   )
 )
 
-colonial_dag <- ggplot(colonial, aes(x = x, y = y, xend = xend, yend = yend)) +
-  geom_dag_edges(
-    end_cap = ggraph::circle(15, "mm"),
-    start_cap = ggraph::circle(15, "mm")
-  ) +
-  geom_dag_point(size = 20) +
-  geom_dag_text(size = 20 / .pt) +
-  expand_plot(expand_y = c(0.3, 0.3)) +
-  theme_dag(
-    panel.background = element_rect(fill = "transparent", colour = NA),
-    plot.background  = element_rect(fill = "transparent", colour = NA)
-  )
-
+colonial_dag <- gg_dag(colonial)
 colonial_dag
 ```
 
@@ -574,10 +567,10 @@ set.seed(9988)
 
 n <- 100
 
-C <- rnorm(100)
+C <- rnorm(n)
 
-E <- 0.4 * C + rnorm(100, 0, 0.1)
-L <- 0.7 * C + rnorm(100, 0, 0.1)
+E <- 0.4 * C + rnorm(n, 0, 0.1)
+L <- 0.7 * C + rnorm(n, 0, 0.1)
 
 col_df <- tibble(C, E, L)
 ```
@@ -652,18 +645,7 @@ plant <- dagify(
   )
 )
 
-plant_dag <- ggplot(plant, aes(x = x, y = y, xend = xend, yend = yend)) +
-  geom_dag_edges(
-    end_cap = ggraph::circle(15, "mm"),
-    start_cap = ggraph::circle(15, "mm")
-  ) +
-  geom_dag_point(size = 20) +
-  geom_dag_text(size = 20 / .pt) +
-  expand_plot(expand_y = c(0.3, 0.3)) +
-  theme_dag(
-    panel.background = element_rect(fill = "transparent", colour = NA),
-    plot.background  = element_rect(fill = "transparent", colour = NA)
-  )
+plant_dag <- gg_dag(plant)
 
 plant_dag
 ```
@@ -690,10 +672,10 @@ set.seed(9988)
 
 n <- 100
 
-B <- rnorm(100)
+B <- rnorm(n)
 
-R <- 0.4 * B + rnorm(100, 0, 0.1)
-P <- 0.7 * R + rnorm(100, 0, 0.1)
+R <- 0.4 * B + rnorm(n, 0, 0.1)
+P <- 0.7 * R + rnorm(n, 0, 0.1)
 
 pla_df <- tibble(B, R, P)
 ```
@@ -760,18 +742,7 @@ popular <- dagify(
   )
 )
 
-popular_dag <- ggplot(popular, aes(x = x, y = y, xend = xend, yend = yend)) +
-  geom_dag_edges(
-    end_cap = ggraph::circle(15, "mm"),
-    start_cap = ggraph::circle(15, "mm")
-  ) +
-  geom_dag_point(size = 20) +
-  geom_dag_text(size = 20 / .pt) +
-  expand_plot(expand_y = c(0.3, 0.3)) +
-  theme_dag(
-    panel.background = element_rect(fill = "transparent", colour = NA),
-    plot.background  = element_rect(fill = "transparent", colour = NA)
-  )
+popular_dag <- gg_dag(popular)
 
 popular_dag
 ```
@@ -797,7 +768,6 @@ popular_dag
 set.seed(9988)
 
 n <- 100
-p <- 0.1
 
 learn_df <- tibble(
   prestige = rnorm(n, mean = 0, sd = 1),
@@ -886,18 +856,7 @@ pro_switch_1 <- dagify(
   )
 )
 
-ps1 <- ggplot(pro_switch_1, aes(x = x, y = y, xend = xend, yend = yend)) +
-  geom_dag_edges(
-    end_cap = ggraph::circle(15, "mm"),
-    start_cap = ggraph::circle(15, "mm")
-  ) +
-  geom_dag_point(size = 20) +
-  geom_dag_text(size = 20 / .pt) +
-  expand_plot(expand_y = c(0.1, 0.1)) +
-  theme_dag(
-    panel.background = element_rect(fill = "transparent", colour = NA),
-    plot.background  = element_rect(fill = "transparent", colour = NA)
-  )
+ps1 <- gg_dag(pro_switch_1)
 
 ps1
 ```
@@ -942,18 +901,7 @@ pro_switch_2 <- dagify(
   )
 )
 
-ps2 <- ggplot(pro_switch_2, aes(x = x, y = y, xend = xend, yend = yend)) +
-  geom_dag_edges(
-    end_cap = ggraph::circle(15, "mm"),
-    start_cap = ggraph::circle(15, "mm")
-  ) +
-  geom_dag_point(size = 20) +
-  geom_dag_text(size = 20 / .pt) +
-  expand_plot(expand_y = c(0.1, 0.1)) +
-  theme_dag(
-    panel.background = element_rect(fill = "transparent", colour = NA),
-    plot.background  = element_rect(fill = "transparent", colour = NA)
-  )
+ps2 <- gg_dag(pro_switch_2)
 
 ps2
 ```
@@ -966,13 +914,13 @@ $P \not\!\perp\!\!\!\perp C$
 
 $S \not\!\perp\!\!\!\perp C$
 
-$S \not\!\perp\!\!\!\perp P | C$
+$S \perp\!\!\!\perp P | C$
 :::
 
 ::: {.column .fragment width="80%"}
-P is independent of C
+P is not independent of C
 
-S is independent of C
+S is not independent of C
 
 S is independent of P, conditional on C
 :::
