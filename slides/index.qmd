@@ -2,7 +2,7 @@
 title: "Causal Inference for linguistics"
 subtitle: "Correlation *is* causation"
 author: "Stefano Coretta"
-date: 20/05/2026
+date: 2026/05/20
 institute: University of Edinburgh
 format: revealjs
 bibliography: references.bib
